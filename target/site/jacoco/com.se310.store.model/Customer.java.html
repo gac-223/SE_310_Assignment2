@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Customer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">assignment2</a> &gt; <a href="index.source.html" class="el_package">com.se310.store.model</a> &gt; <span class="el_source">Customer.java</span></div><h1>Customer.java</h1><pre class="source lang-java linenums">package com.se310.store.model;
+
+import java.util.Date;
+
+/**
+ * Customer class implementation representing Customer in the Store
+ *
+ * @author  Sergey L. Sundukovskiy
+ * @version 1.0
+ * @since   2025-09-25
+ */
+public class Customer {
+
+    private String id;
+    private String firstName;
+    private String lastName;
+    private CustomerType type;
+    private String email;
+    private String accountAddress;
+    private CustomerAgeGroup ageGroup;
+    private StoreLocation storeLocation;
+    private Date lastSeen;
+    private Basket basket;
+
+    /**
+     * Constructor for Customer class
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param type
+     * @param email
+     * @param accountAddress
+     */
+    public Customer(String id, String firstName, String lastName, CustomerType type, String email,
+<span class="fc" id="L35">                    String accountAddress) {</span>
+<span class="fc" id="L36">        this.id = id;</span>
+<span class="fc" id="L37">        this.firstName = firstName;</span>
+<span class="fc" id="L38">        this.lastName = lastName;</span>
+<span class="fc" id="L39">        this.type = type;</span>
+<span class="fc" id="L40">        this.email = email;</span>
+<span class="fc" id="L41">        this.accountAddress = accountAddress;</span>
+<span class="fc" id="L42">    }</span>
+
+    /**
+     * Getter method for Customer id
+     * @return
+     */
+    public String getId() {
+<span class="nc" id="L49">        return id;</span>
+    }
+
+    /**
+     * Setter method for Customer id
+     * @param id
+     */
+    public void setId(String id) {
+<span class="nc" id="L57">        this.id = id;</span>
+<span class="nc" id="L58">    }</span>
+
+    /**
+     * Getter method for Customer's first name
+     * @return
+     */
+    public String getFirstName() {
+<span class="nc" id="L65">        return firstName;</span>
+    }
+
+    /**
+     * Setter method for Customer's first name
+     * @param firstName
+     */
+    public void setFirstName(String firstName) {
+<span class="nc" id="L73">        this.firstName = firstName;</span>
+<span class="nc" id="L74">    }</span>
+
+    /**
+     * Getter method for Customer's last name
+     * @return
+     */
+    public String getLastName() {
+<span class="nc" id="L81">        return lastName;</span>
+    }
+
+    /**
+     * Setter method for Customer's last name
+     * @param lastName
+     */
+    public void setLastName(String lastName) {
+<span class="nc" id="L89">        this.lastName = lastName;</span>
+<span class="nc" id="L90">    }</span>
+
+    /**
+     * Getter method for Customer's type
+     * @return
+     */
+    public CustomerType getType() {
+<span class="fc" id="L97">        return type;</span>
+    }
+
+    /**
+     * Setter method for Customer's type
+     * @param type
+     */
+    public void setType(CustomerType type) {
+<span class="nc" id="L105">        this.type = type;</span>
+<span class="nc" id="L106">    }</span>
+
+    /**
+     * Getter method for Customer's email
+     * @return
+     */
+    public String getEmail() {
+<span class="nc" id="L113">        return email;</span>
+    }
+
+    /**
+     * Setter method for Customer's email
+     * @param email
+     */
+    public void setEmail(String email) {
+<span class="nc" id="L121">        this.email = email;</span>
+<span class="nc" id="L122">    }</span>
+
+    /**
+     * Getter method for Customer's account address
+     * @return
+     */
+    public String getAccountAddress() {
+<span class="nc" id="L129">        return accountAddress;</span>
+    }
+
+    /**
+     * Setter method for Customer's account address
+     * @param accountAddress
+     */
+    public void setAccountAddress(String accountAddress) {
+<span class="nc" id="L137">        this.accountAddress = accountAddress;</span>
+<span class="nc" id="L138">    }</span>
+
+    /**
+     * Getter method for Customer's age group
+     * @return
+     */
+    public CustomerAgeGroup getAgeGroup() {
+<span class="nc" id="L145">        return ageGroup;</span>
+    }
+
+    /**
+     * Setter method for Customer's age group
+     * @param ageGroup
+     */
+    public void setAgeGroup(CustomerAgeGroup ageGroup) {
+<span class="nc" id="L153">        this.ageGroup = ageGroup;</span>
+<span class="nc" id="L154">    }</span>
+
+    /**
+     * Method for retrieving location of the Customer
+     * @return
+     */
+    public StoreLocation getStoreLocation() {
+<span class="fc" id="L161">        return storeLocation;</span>
+    }
+
+    /**
+     * Method for recording location of the Customer
+     * @param storeLocation
+     */
+    public void setStoreLocation(StoreLocation storeLocation) {
+<span class="fc" id="L169">        this.storeLocation = storeLocation;</span>
+<span class="fc" id="L170">    }</span>
+
+    /**
+     * Method retrieving timestamp when Customer was last seen
+     * @return
+     */
+    public Date getLastSeen() {
+<span class="nc" id="L177">        return lastSeen;</span>
+    }
+
+    /**
+     * Method recording timestamp when Customer was last seen
+     * @return
+     */
+    public void setLastSeen(Date lastSeen) {
+<span class="fc" id="L185">        this.lastSeen = lastSeen;</span>
+<span class="fc" id="L186">    }</span>
+
+    /**
+     * Method for retrieving Customer's Basket
+     * @return
+     */
+    public Basket getBasket() {
+<span class="fc" id="L193">        return basket;</span>
+    }
+
+    /**
+     * Method for assigning Basket to the Customer
+     * @param basket
+     */
+    public void assignBasket(Basket basket) {
+<span class="fc" id="L201">        this.basket = basket;</span>
+<span class="fc" id="L202">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L206">        return &quot;Customer{&quot; +</span>
+                &quot;id='&quot; + id + '\'' +
+                &quot;, firstName='&quot; + firstName + '\'' +
+                &quot;, lastName='&quot; + lastName + '\'' +
+                &quot;, type=&quot; + type +
+                &quot;, email='&quot; + email + '\'' +
+                &quot;, accountAddress='&quot; + accountAddress + '\'' +
+                &quot;, ageGroup=&quot; + ageGroup +
+                &quot;, storeLocation=&quot; + storeLocation +
+                &quot;, lastSeen=&quot; + lastSeen +
+                &quot;, basketId=&quot; + basket +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

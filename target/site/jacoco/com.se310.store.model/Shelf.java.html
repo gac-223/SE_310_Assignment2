@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Shelf.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">assignment2</a> &gt; <a href="index.source.html" class="el_package">com.se310.store.model</a> &gt; <span class="el_source">Shelf.java</span></div><h1>Shelf.java</h1><pre class="source lang-java linenums">package com.se310.store.model;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Shelf class implementation representing shelf of the Aisle
+ *
+ * @author  Sergey L. Sundukovskiy
+ * @version 1.0
+ * @since   2025-09-25
+ */
+public class Shelf {
+
+    private String id;
+    private String name;
+    private ShelfLevel level;
+    private String description;
+    private Temperature temperature;
+    private final Map&lt;String, Inventory&gt; inventoryMap;
+
+    /**
+     * Constructor for the Shelf class
+     * @param id
+     * @param name
+     * @param level
+     * @param description
+     * @param temperature
+     */
+<span class="fc" id="L30">    public Shelf(String id, String name, ShelfLevel level, String description, Temperature temperature) {</span>
+<span class="fc" id="L31">        this.id = id;</span>
+<span class="fc" id="L32">        this.name = name;</span>
+<span class="fc" id="L33">        this.level = level;</span>
+<span class="fc" id="L34">        this.description = description;</span>
+<span class="fc" id="L35">        this.temperature = temperature;</span>
+<span class="fc" id="L36">        this.inventoryMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L37">    }</span>
+
+    /**
+     * Getter method for Shelf id
+     * @return
+     */
+    public String getId() {
+<span class="nc" id="L44">        return id;</span>
+    }
+
+    /**
+     * Setter method for Shelf id
+     * @param id
+     */
+    public void setId(String id) {
+<span class="nc" id="L52">        this.id = id;</span>
+<span class="nc" id="L53">    }</span>
+
+    /**
+     * Getter method for Shelf name
+     * @return
+     */
+    public String getName() {
+<span class="nc" id="L60">        return name;</span>
+    }
+
+    /**
+     * Setter method for Shelf name
+     * @param name
+     */
+    public void setName(String name) {
+<span class="nc" id="L68">        this.name = name;</span>
+<span class="nc" id="L69">    }</span>
+
+    /**
+     * Getter method for Shelf level
+     * @return
+     */
+    public ShelfLevel getLevel() {
+<span class="fc" id="L76">        return level;</span>
+    }
+
+    /**
+     * Setter method for Shelf level
+     * @param level
+     */
+    public void setLevel(ShelfLevel level) {
+<span class="nc" id="L84">        this.level = level;</span>
+<span class="nc" id="L85">    }</span>
+
+    /**
+     * Getter method for Shelf description
+     * @return
+     */
+    public String getDescription() {
+<span class="nc" id="L92">        return description;</span>
+    }
+
+    /**
+     * Setter method for Shelf description
+     * @param description
+     */
+    public void setDescription(String description) {
+<span class="nc" id="L100">        this.description = description;</span>
+<span class="nc" id="L101">    }</span>
+
+    /**
+     * Getter method for Shelf temperature
+     * @return
+     */
+    public Temperature getTemperature() {
+<span class="fc" id="L108">        return temperature;</span>
+    }
+
+    /**
+     * Setter method for Shelf temperature
+     * @param temperature
+     */
+    public void setTemperature(Temperature temperature) {
+<span class="nc" id="L116">        this.temperature = temperature;</span>
+<span class="nc" id="L117">    }</span>
+
+    /**
+     * Method for adding Inventory to a particular Store Shelf. If Inventory already exist or
+     * count is not within proper bounds throw and StoreException
+     * count
+     * @param inventoryId
+     * @param storeId
+     * @param aisleNumber
+     * @param shelfId
+     * @param capacity
+     * @param count
+     * @param productId
+     * @param type
+     * @return
+     * @throws StoreException
+     */
+    public Inventory addInventory(String inventoryId, String storeId, String aisleNumber,
+                                  String shelfId, int capacity, int count, String productId, InventoryType type) throws StoreException {
+
+        //Check to see if count within proper bounds
+<span class="pc bpc" id="L138" title="2 of 4 branches missed.">        if(count &lt; 0 || count &gt; capacity)</span>
+<span class="nc" id="L139">            throw new StoreException(&quot;Add Inventory&quot;, &quot;Inventory Is Smaller Than O &quot; +</span>
+                    &quot;or Larger Than Shelf Capacity&quot;);
+
+<span class="fc" id="L142">        InventoryLocation location = new InventoryLocation(storeId, aisleNumber, shelfId);</span>
+<span class="fc" id="L143">        Inventory inventory = new Inventory(inventoryId, location, capacity, count, productId, type);</span>
+
+        //Make sure already does not exist in the store
+<span class="pc bpc" id="L146" title="1 of 2 branches missed.">        if(inventoryMap.putIfAbsent(inventoryId,inventory) != null)</span>
+<span class="nc" id="L147">            throw new StoreException(&quot;Add Inventory&quot;, &quot;Inventory Already Exists&quot;);</span>
+
+<span class="fc" id="L149">        return inventory;</span>
+    }
+
+    /**
+     * Method for getting a Map of Inventory items that belong to the Store
+     * @return
+     */
+    public Map&lt;String, Inventory&gt; getInventoryMap(){
+<span class="fc" id="L157">        return this.inventoryMap;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L162">        return &quot;Shelf{&quot; +</span>
+                &quot;id='&quot; + id + '\'' +
+                &quot;, name='&quot; + name + '\'' +
+                &quot;, level=&quot; + level +
+                &quot;, description='&quot; + description + '\'' +
+                &quot;, temperature=&quot; + temperature +
+                &quot;, inventoryMap=&quot; + inventoryMap +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

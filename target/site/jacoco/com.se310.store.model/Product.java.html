@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Product.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">assignment2</a> &gt; <a href="index.source.html" class="el_package">com.se310.store.model</a> &gt; <span class="el_source">Product.java</span></div><h1>Product.java</h1><pre class="source lang-java linenums">package com.se310.store.model;
+
+/**
+ * Product class implementation representing products in the Stores associated with Inventory items
+ *
+ * @author  Sergey L. Sundukovskiy
+ * @version 1.0
+ * @since   2025-09-25
+ */
+public class Product {
+
+    private String id;
+    private String name;
+    private String description;
+    private String size;
+    private String category;
+    private Double price;
+    private Temperature temperature;
+
+    /**
+     * Constructor for the Product class
+     * @param id
+     * @param name
+     * @param description
+     * @param size
+     * @param category
+     * @param price
+     * @param temperature
+     */
+    public Product(String id, String name, String description, String size,
+<span class="fc" id="L31">                   String category, Double price, Temperature temperature) {</span>
+<span class="fc" id="L32">        this.id = id;</span>
+<span class="fc" id="L33">        this.name = name;</span>
+<span class="fc" id="L34">        this.description = description;</span>
+<span class="fc" id="L35">        this.size = size;</span>
+<span class="fc" id="L36">        this.category = category;</span>
+<span class="fc" id="L37">        this.price = price;</span>
+<span class="fc" id="L38">        this.temperature = temperature;</span>
+<span class="fc" id="L39">    }</span>
+
+    /**
+     * Getter method for Product id
+     * @return
+     */
+    public String getId() {
+<span class="nc" id="L46">        return id;</span>
+    }
+
+    /**
+     * Setter method for Product id
+     * @param id
+     */
+    public void setId(String id) {
+<span class="nc" id="L54">        this.id = id;</span>
+<span class="nc" id="L55">    }</span>
+
+    /**
+     * Getter method for Product name
+     * @return
+     */
+    public String getName() {
+<span class="nc" id="L62">        return name;</span>
+    }
+
+    /**
+     * Setter method for Product name
+     * @param name
+     */
+    public void setName(String name) {
+<span class="nc" id="L70">        this.name = name;</span>
+<span class="nc" id="L71">    }</span>
+
+    /**
+     * Getter method for Product description
+     * @return
+     */
+    public String getDescription() {
+<span class="nc" id="L78">        return description;</span>
+    }
+
+    /**
+     * Setter method for Product descirption
+     * @param description
+     */
+    public void setDescription(String description) {
+<span class="nc" id="L86">        this.description = description;</span>
+<span class="nc" id="L87">    }</span>
+
+    /**
+     * Getter method for Product size
+     * @return
+     */
+    public String getSize() {
+<span class="nc" id="L94">        return size;</span>
+    }
+
+    /**
+     * Setter method for Product size
+     * @param size
+     */
+    public void setSize(String size) {
+<span class="nc" id="L102">        this.size = size;</span>
+<span class="nc" id="L103">    }</span>
+
+    /**
+     * Getter method for Product category
+     * @return
+     */
+    public String getCategory() {
+<span class="nc" id="L110">        return category;</span>
+    }
+
+    /**
+     * Setter method for Product category
+     * @param category
+     */
+    public void setCategory(String category) {
+<span class="nc" id="L118">        this.category = category;</span>
+<span class="nc" id="L119">    }</span>
+
+    /**
+     * Setter method for Product price
+     * @return
+     */
+    public Double getPrice() {
+<span class="nc" id="L126">        return price;</span>
+    }
+
+    /**
+     * Getter method for Product price
+     * @param price
+     */
+    public void setPrice(Double price) {
+<span class="nc" id="L134">        this.price = price;</span>
+<span class="nc" id="L135">    }</span>
+
+    /**
+     * Getter method for Product temperature
+     * @return
+     */
+    public Temperature getTemperature() {
+<span class="fc" id="L142">        return temperature;</span>
+    }
+
+    /**
+     * Setter method for Product temperature
+     * @param temperature
+     */
+    public void setTemperature(Temperature temperature) {
+<span class="nc" id="L150">        this.temperature = temperature;</span>
+<span class="nc" id="L151">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L155">        return &quot;Product{&quot; +</span>
+                &quot;id='&quot; + id + '\'' +
+                &quot;, name='&quot; + name + '\'' +
+                &quot;, description='&quot; + description + '\'' +
+                &quot;, size='&quot; + size + '\'' +
+                &quot;, category='&quot; + category + '\'' +
+                &quot;, price=&quot; + price +
+                &quot;, temperature=&quot; + temperature +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

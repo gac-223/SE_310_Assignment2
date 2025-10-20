@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Basket.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">assignment2</a> &gt; <a href="index.source.html" class="el_package">com.se310.store.model</a> &gt; <span class="el_source">Basket.java</span></div><h1>Basket.java</h1><pre class="source lang-java linenums">package com.se310.store.model;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
+ * Basket class implementation representing Customer basket
+ *
+ * @author  Sergey L. Sundukovskiy
+ * @version 1.0
+ * @since   2025-09-25
+ */
+public class Basket {
+
+    private String id;
+    private final Map&lt;String, Integer&gt; productMap;
+    private Customer customer;
+    private Store store;
+
+    /**
+     * Constructor for Basket class
+     * @param id
+     */
+<span class="fc" id="L24">    public Basket(String id) {</span>
+<span class="fc" id="L25">        this.id = id;</span>
+<span class="fc" id="L26">        this.productMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L27">    }</span>
+
+    /**
+     * Getter method for Basket id
+     * @return
+     */
+    public String getId() {
+<span class="fc" id="L34">        return id;</span>
+    }
+
+    /**
+     * Setter method for Basket id
+     * @param id
+     */
+    public void setId(String id) {
+<span class="nc" id="L42">        this.id = id;</span>
+<span class="nc" id="L43">    }</span>
+
+    /**
+     * Method to add Product to the Customer's Basket. It throws StoreModel Exception on
+     * various model inconsistencies
+     * Method is synchronized to guarantee critical section
+     * @param productId
+     * @param count
+     * @throws StoreException
+     */
+    synchronized public void addProduct(String productId, int count) throws StoreException {
+
+        //Make sure that the customer is registered
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        if(customer.getType() == CustomerType.guest){</span>
+<span class="nc" id="L57">            throw new StoreException(&quot;Add Product&quot;, &quot;Guests Are Not Allowed to Shop&quot;);</span>
+        }
+
+        //Get location of the customer associated with this basket
+<span class="fc" id="L61">        StoreLocation location = this.customer.getStoreLocation();</span>
+        //Get the aisle where the customer was last seen
+<span class="fc" id="L63">        Aisle aisle = store.getAisle(location.getAisleId());</span>
+
+        //Check to see if exists
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if(aisle == null){</span>
+<span class="nc" id="L67">            throw new StoreException(&quot;Add Product&quot;, &quot;Aisle Does Not Exist&quot;);</span>
+        }
+
+        //Get all inventory items from the shelves in the aisle where customer was last seen
+<span class="fc" id="L71">        List&lt;Inventory&gt; inventoryList = aisle.getShelfMap().values()</span>
+<span class="fc" id="L72">                .stream()</span>
+<span class="fc" id="L73">                .flatMap(shelf -&gt; shelf.getInventoryMap().values().</span>
+<span class="fc" id="L74">                        stream())</span>
+<span class="fc" id="L75">                .filter(inventory -&gt; productId.equals(inventory.getProductId()))</span>
+<span class="fc" id="L76">                        .collect(Collectors.toList());</span>
+
+        //If inventory list is empty that means product is not available to be put in the basket
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if(inventoryList.isEmpty()){</span>
+<span class="fc" id="L80">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error : &quot; + customer + &quot;\u001B[0m&quot;);</span>
+<span class="fc" id="L81">            throw new StoreException(&quot;Add Product&quot;, &quot;Customer Is Not Near Product&quot;);</span>
+        }
+
+        //If inventory list is larger than one that means that there are multiple product are available
+        //where customer was last seen
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">        if(inventoryList.size() &gt; 1){</span>
+<span class="nc" id="L87">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error : &quot; + inventoryList + &quot;\u001B[0m&quot;);</span>
+<span class="nc" id="L88">            throw new StoreException(&quot;Add Product&quot;, &quot;There Are Several Products In the Aisle&quot;);</span>
+        }
+
+        //If the count of the product on the shelf is smaller than the customer is trying to buy throw and exception
+<span class="fc" id="L92">        Inventory inventory = inventoryList.get(0);</span>
+<span class="pc bpc" id="L93" title="1 of 2 branches missed.">        if((inventory.getCount() - count) &lt; 0){</span>
+<span class="nc" id="L94">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error : &quot; + inventory + &quot;\u001B[0m&quot;);</span>
+<span class="nc" id="L95">            throw new StoreException(&quot;Add Product&quot;, &quot;There Is Not Enough Inventory on the Shelf&quot;);</span>
+        }
+
+        //Put the product in the basket and decrement product on the shelf
+<span class="fc" id="L99">        this.productMap.merge(productId, count, Integer::sum);</span>
+<span class="fc" id="L100">        inventory.setCount(inventory.getCount() - count);</span>
+<span class="fc" id="L101">    }</span>
+
+    /**
+     * Remove Product from the Customer's Basket. It throws StoreModel Exception on
+     * various model inconsistencies
+     * Method is synchronized to guarantee critical section
+     * @param productId
+     * @param count
+     * @throws StoreException
+     */
+    synchronized public void removeProduct(String productId, int count) throws StoreException {
+
+        //If Customer is trying to remove more units of the products from the basket than he/she has put in
+        //throw an exception
+<span class="fc" id="L115">        Integer tempCount = this.productMap.get(productId);</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">        if(tempCount == null){</span>
+<span class="fc" id="L117">            throw new StoreException(&quot;Remove Product&quot;, &quot;Product Does Not Exist&quot;);</span>
+<span class="pc bpc" id="L118" title="1 of 2 branches missed.">        } else if (count &gt; tempCount){</span>
+<span class="nc" id="L119">            throw new StoreException(&quot;Remove Product&quot;, &quot;Trying To Remove More Quantity Than Exists&quot;);</span>
+        }
+
+        //Get location of the customer associated with this basket
+<span class="fc" id="L123">        StoreLocation location = this.customer.getStoreLocation();</span>
+        //Get the aisle where the customer was last seen
+<span class="fc" id="L125">        Aisle aisle = store.getAisle(location.getAisleId());</span>
+
+        //Check to see if exists
+<span class="pc bpc" id="L128" title="1 of 2 branches missed.">        if(aisle == null){</span>
+<span class="nc" id="L129">            throw new StoreException(&quot;Remove Product&quot;, &quot;Aisle Does Not Exist&quot;);</span>
+        }
+
+        //Get all inventory items from the shelves in the aisle where customer was last seen
+<span class="fc" id="L133">        List&lt;Inventory&gt; inventoryList = aisle.getShelfMap().values()</span>
+<span class="fc" id="L134">                .stream()</span>
+<span class="fc" id="L135">                .flatMap(shelf -&gt; shelf.getInventoryMap().values().</span>
+<span class="fc" id="L136">                        stream())</span>
+<span class="fc" id="L137">                .filter(inventory -&gt; productId.equals(inventory.getProductId()))</span>
+<span class="fc" id="L138">                .collect(Collectors.toList());</span>
+
+        //If inventory list is empty that means product is not available to be put on the shelf
+<span class="pc bpc" id="L141" title="1 of 2 branches missed.">        if(inventoryList.isEmpty()){</span>
+<span class="nc" id="L142">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error: &quot; + customer + &quot;\u001B[0m&quot;);</span>
+<span class="nc" id="L143">            throw new StoreException(&quot;Remove Product&quot;, &quot;Customer Is Not Near Product&quot;);</span>
+        }
+
+        //If inventory list is larger than one that means that there are multiple product slots are available
+        //on the shelves where customer was last seen
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">        if(inventoryList.size() &gt; 1){</span>
+<span class="nc" id="L149">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error : &quot; + inventoryList + &quot;\u001B[0m&quot;);</span>
+<span class="nc" id="L150">            throw new StoreException(&quot;Remove Product&quot;, &quot;There Are Several Products In the Aisle&quot;);</span>
+        }
+
+        //If product capacity on the shelf is smaller than what the customer is trying to put back throw and exception
+<span class="fc" id="L154">        Inventory inventory = inventoryList.get(0);</span>
+<span class="pc bpc" id="L155" title="1 of 2 branches missed.">        if((inventory.getCount() + count) &gt; inventory.getCapacity()){</span>
+<span class="nc" id="L156">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error : &quot; + inventory + &quot;\u001B[0m&quot;);</span>
+<span class="nc" id="L157">            throw new StoreException(&quot;Remove Product&quot;, &quot;There Is Not Enough Capacity on the Shelf&quot;);</span>
+        }
+
+        //Remove the product in the basket and increment product on the shelf
+<span class="fc" id="L161">        this.productMap.merge(productId, count, (a, b) -&gt; a - b);</span>
+<span class="fc" id="L162">        inventory.setCount(inventory.getCount() + count);</span>
+
+        //if product count in the basket is 0 remove it from the basket completely
+<span class="fc" id="L165">        tempCount = this.productMap.get(productId);</span>
+<span class="fc bfc" id="L166" title="All 2 branches covered.">        if(tempCount == 0){</span>
+<span class="fc" id="L167">            productMap.remove(productId);</span>
+        }
+<span class="fc" id="L169">    }</span>
+
+    /**
+     * Remove all Products from the Customer's Basket
+     * @throws StoreException
+     */
+    synchronized public void clearBasket() throws StoreException {
+
+        //Removal of the products can't occur in the lambda function since we would get a
+        //concurrent object modification exception
+<span class="fc" id="L179">        Set&lt;String&gt; keys = this.productMap.keySet();</span>
+<span class="fc" id="L180">        List&lt;Integer&gt; values = new ArrayList&lt;&gt;(productMap.values());</span>
+
+        //Remove all the products from the Product Map
+<span class="fc" id="L183">        int i = 0;</span>
+<span class="fc bfc" id="L184" title="All 2 branches covered.">        for (String key : keys) {</span>
+<span class="fc" id="L185">            removeProduct(key, values.get(i));</span>
+<span class="fc" id="L186">            i++;</span>
+<span class="fc" id="L187">        }</span>
+
+<span class="fc" id="L189">        this.productMap.clear();</span>
+
+        //Clear Basket and remove Customer association
+<span class="fc" id="L192">        this.customer.assignBasket(null);</span>
+<span class="fc" id="L193">        this.customer = null;</span>
+<span class="fc" id="L194">    }</span>
+
+    /**
+     * Setter method for the Customer to establish a connection between Basket and the Store
+     * @param store
+     */
+    public void setStore(Store store){
+<span class="fc" id="L201">        this.store = store;</span>
+<span class="fc" id="L202">    }</span>
+    /**
+     * Setter method for the Customer to establish a connection between Basket and the Customer
+     * @param customer
+     */
+    public void setCustomer(Customer customer){
+<span class="fc" id="L208">        this.customer = customer;</span>
+<span class="fc" id="L209">    }</span>
+
+    /**
+     * Getter method for Store for a given Basket
+     * @return
+     */
+    public Store getStore(){
+<span class="nc" id="L216">        return this.store;</span>
+    }
+
+    /**
+     * Getter method for Customer for a given Basket
+     * @return
+     */
+    public Customer getCustomer(){
+<span class="fc" id="L224">        return this.customer;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L229">        return &quot;Basket{&quot; +</span>
+                &quot;id='&quot; + id + '\'' +
+                &quot;, productMap=&quot; + productMap +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
