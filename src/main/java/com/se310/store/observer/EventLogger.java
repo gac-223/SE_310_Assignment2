@@ -10,8 +10,11 @@ import java.time.format.DateTimeFormatter;
  * @version 1.0
  * @since   2025-09-25
  */
-public class EventLogger {
+public class EventLogger implements Observer {
 
     //TODO: Implement Event Logger to log device events to console
+    public synchronized void update(String deviceId, String eventType, String message) {
+        System.out.println(message) ;
+    }
 
 }

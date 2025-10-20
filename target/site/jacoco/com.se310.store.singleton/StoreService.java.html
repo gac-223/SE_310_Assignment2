@@ -426,83 +426,85 @@ import com.se310.store.model.*;
 <span class="fc" id="L426">        return basket;</span>
     }
 
+    // within provisionDevice, do we want to add concrete observers to each and every device?
+
     public Device provisionDevice(String deviceId, String name, String deviceType, String storeId,
                                   String aisleNumber, String token) throws StoreException {
 
-<span class="fc" id="L432">        Store store = storeMap.get(storeId);</span>
+<span class="fc" id="L434">        Store store = storeMap.get(storeId);</span>
         Device device;
         StoreLocation storeLocation;
 
         //Check to see if store exists
-<span class="pc bpc" id="L437" title="1 of 2 branches missed.">        if(store == null){</span>
-<span class="nc" id="L438">            throw new StoreException(&quot;Provision Device&quot;, &quot;Store Does Not Exist&quot;);</span>
+<span class="pc bpc" id="L439" title="1 of 2 branches missed.">        if(store == null){</span>
+<span class="nc" id="L440">            throw new StoreException(&quot;Provision Device&quot;, &quot;Store Does Not Exist&quot;);</span>
         } else {
 
             //Check to see if aisle exists
-<span class="fc" id="L442">            Aisle aisle = store.getAisle(aisleNumber);</span>
-<span class="pc bpc" id="L443" title="1 of 2 branches missed.">            if (aisle == null){</span>
-<span class="nc" id="L444">                throw new StoreException(&quot;Provision Device&quot;, &quot;Aisle Does Not Exist&quot;);</span>
+<span class="fc" id="L444">            Aisle aisle = store.getAisle(aisleNumber);</span>
+<span class="pc bpc" id="L445" title="1 of 2 branches missed.">            if (aisle == null){</span>
+<span class="nc" id="L446">                throw new StoreException(&quot;Provision Device&quot;, &quot;Aisle Does Not Exist&quot;);</span>
             } else {
-<span class="fc" id="L446">                storeLocation = new StoreLocation(storeId, aisleNumber);</span>
+<span class="fc" id="L448">                storeLocation = new StoreLocation(storeId, aisleNumber);</span>
 
                 //Check to see if device already exists
-<span class="fc" id="L449">                device = deviceMap.get(deviceId);</span>
-<span class="pc bpc" id="L450" title="1 of 2 branches missed.">                if(device != null){</span>
-<span class="nc" id="L451">                    throw new StoreException(&quot;Provision Device&quot;, &quot;Device Already Exists&quot;);</span>
+<span class="fc" id="L451">                device = deviceMap.get(deviceId);</span>
+<span class="pc bpc" id="L452" title="1 of 2 branches missed.">                if(device != null){</span>
+<span class="nc" id="L453">                    throw new StoreException(&quot;Provision Device&quot;, &quot;Device Already Exists&quot;);</span>
                 }
 
                 //Determine wha type of device we are trying to add
-<span class="fc bfc" id="L455" title="All 2 branches covered.">                for (SensorType sensor : SensorType.values()) {</span>
-<span class="fc bfc" id="L456" title="All 2 branches covered.">                    if (sensor.name().equals(deviceType)){</span>
-<span class="fc" id="L457">                        device = new Sensor (deviceId, name, storeLocation, deviceType);</span>
+<span class="fc bfc" id="L457" title="All 2 branches covered.">                for (SensorType sensor : SensorType.values()) {</span>
+<span class="fc bfc" id="L458" title="All 2 branches covered.">                    if (sensor.name().equals(deviceType)){</span>
+<span class="fc" id="L459">                        device = new Sensor (deviceId, name, storeLocation, deviceType);</span>
                     }
                 }
-<span class="fc bfc" id="L460" title="All 2 branches covered.">                for (ApplianceType appliance : ApplianceType.values()) {</span>
-<span class="fc bfc" id="L461" title="All 2 branches covered.">                    if (appliance.name().equals(deviceType)){</span>
-<span class="fc" id="L462">                        device = new Appliance(deviceId, name, storeLocation, deviceType);</span>
+<span class="fc bfc" id="L462" title="All 2 branches covered.">                for (ApplianceType appliance : ApplianceType.values()) {</span>
+<span class="fc bfc" id="L463" title="All 2 branches covered.">                    if (appliance.name().equals(deviceType)){</span>
+<span class="fc" id="L464">                        device = new Appliance(deviceId, name, storeLocation, deviceType);</span>
                     }
                 }
 
                 //Add device to the global map
-<span class="fc" id="L467">                deviceMap.put(deviceId,device);</span>
+<span class="fc" id="L469">                deviceMap.put(deviceId,device);</span>
                 //Add device to the local store
-<span class="fc" id="L469">                store.addDevice(device);</span>
+<span class="fc" id="L471">                store.addDevice(device);</span>
 
             }
         }
-<span class="fc" id="L473">        return device;</span>
+<span class="fc" id="L475">        return device;</span>
     }
 
     public Device showDevice(String deviceId, String token) throws StoreException {
-<span class="fc" id="L477">        Device device = deviceMap.get(deviceId);</span>
+<span class="fc" id="L479">        Device device = deviceMap.get(deviceId);</span>
 
         //Check to see if device exists
-<span class="pc bpc" id="L480" title="1 of 2 branches missed.">        if(device == null)</span>
-<span class="nc" id="L481">            throw new StoreException(&quot;Show Device&quot;, &quot;Device Does Not Exist&quot;);</span>
+<span class="pc bpc" id="L482" title="1 of 2 branches missed.">        if(device == null)</span>
+<span class="nc" id="L483">            throw new StoreException(&quot;Show Device&quot;, &quot;Device Does Not Exist&quot;);</span>
 
-<span class="fc" id="L483">        return device;</span>
+<span class="fc" id="L485">        return device;</span>
     }
 
     public void raiseEvent(String deviceId, String event, String token) throws StoreException {
-<span class="fc" id="L487">        Device device = deviceMap.get(deviceId);</span>
+<span class="fc" id="L489">        Device device = deviceMap.get(deviceId);</span>
 
         //Check to see if a device exists
-<span class="pc bpc" id="L490" title="1 of 2 branches missed.">        if(device == null){</span>
-<span class="nc" id="L491">            throw new StoreException(&quot;Raise Event&quot;, &quot;Device Does Not Exist&quot;);</span>
+<span class="pc bpc" id="L492" title="1 of 2 branches missed.">        if(device == null){</span>
+<span class="nc" id="L493">            throw new StoreException(&quot;Raise Event&quot;, &quot;Device Does Not Exist&quot;);</span>
         }
-<span class="fc" id="L493">        device.processEvent(event);</span>
+<span class="fc" id="L495">        device.processEvent(event);</span>
 
-<span class="fc" id="L495">    }</span>
+<span class="fc" id="L497">    }</span>
 
     public void issueCommand(String deviceId, String command, String token) throws StoreException {
 
-<span class="fc" id="L499">        Appliance appliance = (Appliance) deviceMap.get(deviceId);</span>
+<span class="fc" id="L501">        Appliance appliance = (Appliance) deviceMap.get(deviceId);</span>
 
         //Check to see if the appliance exists
-<span class="pc bpc" id="L502" title="1 of 2 branches missed.">        if(appliance == null){</span>
-<span class="nc" id="L503">            throw new StoreException(&quot;Issue Command&quot;, &quot;Device Does Not Exist&quot;);</span>
+<span class="pc bpc" id="L504" title="1 of 2 branches missed.">        if(appliance == null){</span>
+<span class="nc" id="L505">            throw new StoreException(&quot;Issue Command&quot;, &quot;Device Does Not Exist&quot;);</span>
         }
-<span class="fc" id="L505">        appliance.processCommand(command);</span>
-<span class="fc" id="L506">    }</span>
+<span class="fc" id="L507">        appliance.processCommand(command);</span>
+<span class="fc" id="L508">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

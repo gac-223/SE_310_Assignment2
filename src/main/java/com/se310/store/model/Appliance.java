@@ -30,7 +30,8 @@ public class Appliance extends Device{
     public void processEvent(String event) {
         System.out.println("Processing Event : " + event);
 
-        this.notifyObservers(event) ;
+
+        this.notifyObservers() ;
     }
 
     /**
@@ -41,6 +42,7 @@ public class Appliance extends Device{
     public void processCommand(String command){
         System.out.println("<<< " + "Processing Command : " + command);
 
-        this.notifyObservers(command) ;
+
+        this.notifyObservers() ;
     }
 }

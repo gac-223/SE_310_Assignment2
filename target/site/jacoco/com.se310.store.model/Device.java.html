@@ -3,8 +3,10 @@
 import com.se310.store.observer.Observable;
 import com.se310.store.observer.Observer;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects ;
 
 /**
  * Abstract class representing Device in the Store
@@ -14,7 +16,7 @@ import java.util.List;
  * @version 1.0
  * @since   2025-09-25
  */
-public abstract class Device {
+public abstract class Device implements Observable {
 
     //TODO: Implement Observable interface
     //TODO: Implement Observer storage
@@ -28,6 +30,58 @@ public abstract class Device {
     private String type;
     private final List&lt;Observer&gt; observers;
 
+    // implementation of registration
+
+    // ensure not null
+    // ensure no duplicates
+    public synchronized void attach(Observer observer) {
+
+
+
+<span class="nc" id="L41">        Objects.requireNonNull(observer, &quot;Observer cannot be null&quot;) ;</span>
+
+<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (!(observers.contains(observer))) {</span>
+<span class="nc" id="L44">            observers.add(observer) ;</span>
+
+            // we could use a logger to log information
+        }
+
+        // within an else statement, could log duplicates
+
+<span class="nc" id="L51">    }</span>
+
+    // implementation of removal
+    public void detach(Observer observer) {
+
+<span class="nc bnc" id="L56" title="All 2 branches missed.">        if (observers.remove(observer)) {</span>
+            // could log the removal
+        }
+
+        // within an else log when trying to detach an observer that isn't registered
+<span class="nc" id="L61">    }</span>
+
+    // loop thru list of observers
+    // use a try catch on update, this ensures that if one observer throws an exception, it won't effect other observers
+        // other observers will still get notified
+
+    public synchronized void notifyObservers(String message) {
+
+        // loop thru list of observers
+
+        // and then call update on each of them
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">        for (Observer observer : observers) {</span>
+            // log information
+
+            try {
+<span class="nc" id="L76">                observer.update(this.id, this.type, message) ;</span>
+
+<span class="nc" id="L78">            }  catch (Exception e) {</span>
+                // log info about exception
+<span class="nc" id="L80">            }</span>
+<span class="nc" id="L81">        }</span>
+
+<span class="fc" id="L83">    }</span>
+
     /**
      * Constructor for the Device class
      * @param id
@@ -35,20 +89,20 @@ public abstract class Device {
      * @param storeLocation
      * @param type
      */
-<span class="fc" id="L38">    public Device(String id, String name, StoreLocation storeLocation, String type) {</span>
-<span class="fc" id="L39">        this.id = id;</span>
-<span class="fc" id="L40">        this.name = name;</span>
-<span class="fc" id="L41">        this.storeLocation = storeLocation;</span>
-<span class="fc" id="L42">        this.type = type;</span>
-<span class="fc" id="L43">        this.observers = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L92">    public Device(String id, String name, StoreLocation storeLocation, String type) {</span>
+<span class="fc" id="L93">        this.id = id;</span>
+<span class="fc" id="L94">        this.name = name;</span>
+<span class="fc" id="L95">        this.storeLocation = storeLocation;</span>
+<span class="fc" id="L96">        this.type = type;</span>
+<span class="fc" id="L97">        this.observers = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L98">    }</span>
 
     /**
      * Getter method for the Device id
      * @return
      */
     public String getId() {
-<span class="fc" id="L51">        return id;</span>
+<span class="fc" id="L105">        return id;</span>
     }
 
     /**
@@ -56,15 +110,15 @@ public abstract class Device {
      * @param id
      */
     public void setId(String id) {
-<span class="nc" id="L59">        this.id = id;</span>
-<span class="nc" id="L60">    }</span>
+<span class="nc" id="L113">        this.id = id;</span>
+<span class="nc" id="L114">    }</span>
 
     /**
      * Getter method for the Device name
      * @return
      */
     public String getName() {
-<span class="nc" id="L67">        return name;</span>
+<span class="nc" id="L121">        return name;</span>
     }
 
     /**
@@ -72,15 +126,15 @@ public abstract class Device {
      * @param name
      */
     public void setName(String name) {
-<span class="nc" id="L75">        this.name = name;</span>
-<span class="nc" id="L76">    }</span>
+<span class="nc" id="L129">        this.name = name;</span>
+<span class="nc" id="L130">    }</span>
 
     /**
      * Getter method for the Store location
      * @return
      */
     public StoreLocation getStoreLocation() {
-<span class="nc" id="L83">        return storeLocation;</span>
+<span class="nc" id="L137">        return storeLocation;</span>
     }
 
     /**
@@ -88,15 +142,15 @@ public abstract class Device {
      * @param storeLocation
      */
     public void setStoreLocation(StoreLocation storeLocation) {
-<span class="nc" id="L91">        this.storeLocation = storeLocation;</span>
-<span class="nc" id="L92">    }</span>
+<span class="nc" id="L145">        this.storeLocation = storeLocation;</span>
+<span class="nc" id="L146">    }</span>
 
     /**
      * Getter method for the Device type
      * @return
      */
     public String getType() {
-<span class="nc" id="L99">        return type;</span>
+<span class="nc" id="L153">        return type;</span>
     }
 
     /**
@@ -104,8 +158,10 @@ public abstract class Device {
      * @param type
      */
     public void setType(String type) {
-<span class="nc" id="L107">        this.type = type;</span>
-<span class="nc" id="L108">    }</span>
+<span class="nc" id="L161">        this.type = type;</span>
+<span class="nc" id="L162">    }</span>
+
+    // does the processEvent call notifyObservers?
 
     /**
      * Abstract method that gets implemented by Sensor or Appliance devices
@@ -115,7 +171,7 @@ public abstract class Device {
 
     @Override
     public String toString() {
-<span class="fc" id="L118">        return &quot;Device{&quot; +</span>
+<span class="fc" id="L174">        return &quot;Device{&quot; +</span>
                 &quot;id='&quot; + id + '\'' +
                 &quot;, name='&quot; + name + '\'' +
                 &quot;, storeLocation=&quot; + storeLocation +

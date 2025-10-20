@@ -64,9 +64,10 @@ public abstract class Device implements Observable {
     // use a try catch on update, this ensures that if one observer throws an exception, it won't effect other observers
         // other observers will still get notified
 
-    public synchronized void notifyObservers(String message) {
+    public synchronized void notifyObservers() {
 
         // loop thru list of observers
+        String message = "" ;
 
         // and then call update on each of them
         for (Observer observer : observers) {

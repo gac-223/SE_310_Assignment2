@@ -28,8 +28,12 @@ public class Appliance extends Device{
      */
     @Override
     public void processEvent(String event) {
-<span class="fc" id="L31">        System.out.println(&quot;Processing Event : &quot; + event);</span>
-<span class="fc" id="L32">    }</span>
+        // System.out.println(&quot;Processing Event : &quot; + event);
+
+<span class="fc" id="L33">        String message = &quot;Processing Event : &quot; + event ;</span>
+
+<span class="fc" id="L35">        this.notifyObservers(message) ;</span>
+<span class="fc" id="L36">    }</span>
 
     /**
      * This is a placeholder for the processing commands
@@ -37,7 +41,11 @@ public class Appliance extends Device{
      * @param command
      */
     public void processCommand(String command){
-<span class="fc" id="L40">        System.out.println(&quot;&lt;&lt;&lt; &quot; + &quot;Processing Command : &quot; + command);</span>
-<span class="fc" id="L41">    }</span>
+        // System.out.println(&quot;&lt;&lt;&lt; &quot; + &quot;Processing Command : &quot; + command);
+
+<span class="fc" id="L46">        String message = &quot;&lt;&lt;&lt; &quot; + &quot;Processing Command : &quot; + command ;</span>
+
+<span class="fc" id="L48">        this.notifyObservers(message) ;</span>
+<span class="fc" id="L49">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

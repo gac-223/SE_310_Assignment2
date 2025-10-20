@@ -10,9 +10,12 @@ import java.time.format.DateTimeFormatter;
  * @version 1.0
  * @since   2025-09-25
  */
-<span class="nc" id="L13">public class EventLogger {</span>
+<span class="nc" id="L13">public class EventLogger implements Observer {</span>
 
     //TODO: Implement Event Logger to log device events to console
+    public synchronized void update(String deviceId, String eventType, String message) {
+<span class="nc" id="L17">        System.out.println(message) ;</span>
+<span class="nc" id="L18">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

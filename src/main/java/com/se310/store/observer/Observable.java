@@ -25,6 +25,6 @@ public interface Observable {
 
     // notifies all observers in collection of a state change
     // calls the observer.update(String deviceId, String eventType, String message) method for each observer
-    void notifyObservers(String message) ;
+    void notifyObservers() ;
 
 }
