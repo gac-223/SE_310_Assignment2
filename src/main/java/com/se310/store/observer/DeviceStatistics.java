@@ -11,7 +11,60 @@ import java.util.Map;
  * @version 1.0
  * @since   2025-09-25
  */
-public class DeviceStatistics {
+public class DeviceStatistics implements Observer {
+
+    private static DeviceStatistics instance ;
+
+    // a hashmap to store deviceEventCounts
+    private final HashMap<String, Integer> deviceEventCounts ;
+
+    // a hashmap to store deviceCommandCounts
+    private final HashMap<String, Integer> deviceCommandCounts ;
+
+    private DeviceStatistics() {
+        deviceEventCounts = new HashMap<>() ;
+        deviceCommandCounts = new HashMap<>() ;
+    }
+
+    public static DeviceStatistics getInstance() {
+        if (instance == null) {
+
+            synchronized(DeviceStatistics.class) {
+                if (instance == null) {
+                    instance = new DeviceStatistics() ;
+                }
+            }
+        }
+        return instance ;
+    }
+
+
 
     //TODO: Implement Device Statistics stores and prints out event and command counts
+
+    public synchronized void update(String deviceId, String eventType, String message) {
+
+        switch (eventType) {
+            case "Command":
+
+                // if deviceCommandCounts contains deviceId, then increase count by 1
+                // else set to 1
+                if (deviceCommandCounts.containsKey(deviceId)) {
+                    deviceCommandCounts.put(deviceId, deviceCommandCounts.get(deviceId) + 1) ;
+                } else {
+                    deviceCommandCounts.put(deviceId, 1) ;
+                }
+                break ;
+            case "Event":
+                if (deviceEventCounts.containsKey(deviceId)) {
+                    deviceEventCounts.put(deviceId, deviceEventCounts.get(deviceId) + 1) ;
+                } else {
+                    deviceEventCounts.put(deviceId, 1) ;
+                }
+
+                break ;
+        }
+    }
+
+
 }

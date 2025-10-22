@@ -8,18 +8,30 @@
  * @version 1.0
  * @since   2025-09-25
  */
-<span class="nc" id="L11">public class AlertMonitor implements Observer {</span>
+public class AlertMonitor implements Observer {
+
+    private static AlertMonitor instance ;
+
+    private AlertMonitor() {
+
+    }
+
+    public static AlertMonitor getInstance() {
+
+<span class="nc bnc" id="L21" title="All 2 branches missed.">        if (instance == null) {</span>
+<span class="nc" id="L22">            synchronized(AlertMonitor.class) {</span>
+<span class="nc bnc" id="L23" title="All 2 branches missed.">                if (instance == null) {</span>
+<span class="nc" id="L24">                    instance = new AlertMonitor() ;</span>
+                }
+            }
+        }
+
+<span class="nc" id="L29">        return instance ;</span>
+    }
 
     //TODO: Implement Alert Monitor that prints out critical events to the console
     public synchronized void update (String deviceId, String eventType, String message) {
-<span class="nc bnc" id="L15" title="All 2 branches missed.">        switch (eventType) {</span>
-            case &quot;emergency&quot;:
-            case &quot;critical&quot;:
-            case &quot;error&quot;:
-            case &quot;failure&quot;:
-            case &quot;alarm&quot;:
-<span class="nc" id="L21">                System.out.println(&quot;Device: &quot; + deviceId + &quot;\tMessage: &quot; + message) ;</span>
-        }
-<span class="nc" id="L23">    }</span>
+        
+<span class="nc" id="L35">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

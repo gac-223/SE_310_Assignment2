@@ -1,4 +1,7 @@
 package com.se310.store.model;
+
+import com.se310.store.observer.Observer;
+
 /**
  * Appliance class implementation representing Appliance Device in the Store
  *
@@ -11,6 +14,9 @@ public class Appliance extends Device{
     //TODO: Implement Observer notification related to event processing
     //TODO: Implement Observer notification related to command processing
 
+    // so we have variable for event type
+    // and then event message
+
     /**
      * Constructor for Appliance class
      * @param id
@@ -22,6 +28,10 @@ public class Appliance extends Device{
         super(id, name, storeLocation, type);
     }
 
+    
+
+    
+
     /**
      * Appliance specific event processing
      * Notifies observers when an event is processed
@@ -31,7 +41,7 @@ public class Appliance extends Device{
         System.out.println("Processing Event : " + event);
 
 
-        this.notifyObservers() ;
+        this.notifyObservers("Event", event) ;
     }
 
     /**
@@ -42,7 +52,6 @@ public class Appliance extends Device{
     public void processCommand(String command){
         System.out.println("<<< " + "Processing Command : " + command);
 
-
-        this.notifyObservers() ;
+        this.notifyObservers("Command", command) ;
     }
 }

@@ -10,12 +10,45 @@ import java.time.format.DateTimeFormatter;
  * @version 1.0
  * @since   2025-09-25
  */
-<span class="nc" id="L13">public class EventLogger implements Observer {</span>
+public class EventLogger implements Observer {
+
+    private static EventLogger instance ;
+
+    private final DateTimeFormatter formatter ;
+
+
+<span class="fc" id="L20">    private EventLogger() {</span>
+<span class="fc" id="L21">        formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME ;</span>
+<span class="fc" id="L22">    }</span>
+
+    // threadsafeDoubleChecked singleton
+    public static EventLogger getInstance() {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (instance == null) {</span>
+<span class="fc" id="L27">            synchronized(EventLogger.class) {</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">                if (instance == null) {</span>
+<span class="fc" id="L29">                    instance = new EventLogger() ;</span>
+                }
+            }
+        }
+
+<span class="fc" id="L34">        return instance ;</span>
+    }
 
     //TODO: Implement Event Logger to log device events to console
     public synchronized void update(String deviceId, String eventType, String message) {
-<span class="nc" id="L17">        System.out.println(message) ;</span>
-<span class="nc" id="L18">    }</span>
+
+<span class="fc" id="L40">        LocalDateTime dateTime = LocalDateTime.now() ;</span>
+
+<span class="fc" id="L42">        String formattedDateTime = formatter.format(dateTime) ;</span>
+
+<span class="fc" id="L44">        LocalDateTime parsedDate = LocalDateTime.parse(formattedDateTime, formatter) ;</span>
+
+<span class="fc" id="L46">        System.out.println(parsedDate) ;</span>
+
+        // can make prettier
+<span class="fc" id="L49">        System.out.println(&quot;[EventLogger] &quot; + formattedDateTime + &quot; - Device: &quot; + deviceId + &quot; | Type: &quot; + eventType + &quot; | Message: &quot; + message) ;</span>
+
+<span class="fc" id="L51">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

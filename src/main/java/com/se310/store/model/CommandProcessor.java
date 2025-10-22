@@ -21,7 +21,8 @@ import java.util.regex.Pattern;
  */
 public class CommandProcessor implements CommandAPI  {
 
-    StoreService storeService = new StoreService();
+    // want to use a facade here
+    StoreService storeService = StoreService.getInstance();
 
     public void processCommand(String commandBefore) throws CommandException, StoreException {
 

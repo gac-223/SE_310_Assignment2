@@ -10,15 +10,27 @@ package com.se310.store.observer;
  */
 public class AlertMonitor implements Observer {
 
+    private static AlertMonitor instance ;
+
+    private AlertMonitor() {
+
+    }
+
+    public static AlertMonitor getInstance() {
+
+        if (instance == null) {
+            synchronized(AlertMonitor.class) {
+                if (instance == null) {
+                    instance = new AlertMonitor() ;
+                }
+            }
+        }
+
+        return instance ;
+    }
+
     //TODO: Implement Alert Monitor that prints out critical events to the console
     public synchronized void update (String deviceId, String eventType, String message) {
-        switch (eventType) {
-            case "emergency":
-            case "critical":
-            case "error":
-            case "failure":
-            case "alarm":
-                System.out.println("Device: " + deviceId + "\tMessage: " + message) ;
-        }
+        
     }
 }

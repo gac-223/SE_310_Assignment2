@@ -4,6 +4,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import com.se310.store.model.*;
+import com.se310.store.observer.DeviceStatistics;
+import com.se310.store.observer.EventLogger;
+import com.se310.store.observer.StoreNotifier;
+
+// implement an interface for StoreService And StoreServiceProxy to implement
+    // StoreServiceProxy controls access to storeService singleton
 
 /**
  * This is the main service of the system implementing ommand API for processing CLI commands and
@@ -16,6 +22,23 @@ import com.se310.store.model.*;
 public class StoreService {
 
     //TODO: Implement Thread Safe Double-Checked Locking Singleton Pattern
+    private static StoreService instance ;
+
+    private StoreService() {
+
+    }
+
+    public static StoreService getInstance() {
+        if (instance == null) {
+            synchronized(StoreService.class) {
+                if (instance == null) {
+                    instance = new StoreService() ;
+                }
+            }
+        }
+
+        return instance ;
+    }
 
     private static final Map<String, Store> storeMap;
     private static final Map<String, Customer> customerMap;
@@ -469,6 +492,11 @@ public class StoreService {
                 deviceMap.put(deviceId,device);
                 //Add device to the local store
                 store.addDevice(device);
+
+                // do we add the observers within here?
+                device.attach(new StoreNotifier(storeLocation)) ;
+                device.attach(EventLogger.getInstance()) ;
+                device.attach(DeviceStatistics.getInstance()) ;
 
             }
         }

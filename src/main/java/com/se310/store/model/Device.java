@@ -28,53 +28,45 @@ public abstract class Device implements Observable {
     private String name;
     private StoreLocation storeLocation;
     private String type;
-    private final List<Observer> observers;
 
-    // implementation of registration
+
+    protected final List<Observer> observers;
+
+
 
     // ensure not null
     // ensure no duplicates
     public synchronized void attach(Observer observer) {
 
-
-
         Objects.requireNonNull(observer, "Observer cannot be null") ;
 
         if (!(observers.contains(observer))) {
             observers.add(observer) ;
-
-            // we could use a logger to log information
         }
 
-        // within an else statement, could log duplicates
 
     }
 
     // implementation of removal
     public void detach(Observer observer) {
 
-        if (observers.remove(observer)) {
-            // could log the removal
-        }
+        observers.remove(observer) ;
 
-        // within an else log when trying to detach an observer that isn't registered
     }
+
 
     // loop thru list of observers
     // use a try catch on update, this ensures that if one observer throws an exception, it won't effect other observers
         // other observers will still get notified
+    public synchronized void notifyObservers(String eventType, String eventMessage) {
 
-    public synchronized void notifyObservers() {
 
-        // loop thru list of observers
-        String message = "" ;
-
-        // and then call update on each of them
+        // call update on each observer
         for (Observer observer : observers) {
-            // log information
 
             try {
-                observer.update(this.id, this.type, message) ;
+
+                observer.update(this.id, eventType, eventMessage) ;
 
             }  catch (Exception e) {
                 // log info about exception
@@ -161,8 +153,6 @@ public abstract class Device implements Observable {
     public void setType(String type) {
         this.type = type;
     }
-
-    // does the processEvent call notifyObservers?
 
     /**
      * Abstract method that gets implemented by Sensor or Appliance devices
