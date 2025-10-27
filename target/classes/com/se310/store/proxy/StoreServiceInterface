@@ -1,0 +1,8 @@
+
+
+public interface StoreServiceInterface {
+
+
+    public Store provisionStore(String storeId, String name, String address, String token) ;
+
+}
