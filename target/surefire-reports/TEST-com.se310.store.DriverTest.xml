@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.se310.store.DriverTest" time="0.072" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.se310.store.DriverTest" time="0.071" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/greysonchavez/Desktop/se310-assignment2-master/target/surefire/surefirebooter-20251022144610638_3.jar /Users/greysonchavez/Desktop/se310-assignment2-master/target/surefire 2025-10-22T14-46-10_608-jvmRun1 surefire-20251022144610638_1tmp surefire_0-20251022144610638_2tmp"/>
+    <property name="sun.java.command" value="/Users/greysonchavez/Desktop/se310-assignment2-master/target/surefire/surefirebooter-20251026174725916_3.jar /Users/greysonchavez/Desktop/se310-assignment2-master/target/surefire 2025-10-26T17-47-25_882-jvmRun1 surefire-20251026174725916_1tmp surefire_0-20251026174725916_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/greysonchavez/Desktop/se310-assignment2-master/target/test-classes:/Users/greysonchavez/Desktop/se310-assignment2-master/target/classes:/Users/greysonchavez/.m2/repository/org/hsqldb/hsqldb/2.7.1/hsqldb-2.7.1.jar:/Users/greysonchavez/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/greysonchavez/.m2/repository/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar:/Users/greysonchavez/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.9.2/junit-jupiter-params-5.9.2.jar:/Users/greysonchavez/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/greysonchavez/.m2/repository/org/mockito/mockito-core/5.2.0/mockito-core-5.2.0.jar:/Users/greysonchavez/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.1/byte-buddy-agent-1.14.1.jar:/Users/greysonchavez/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/greysonchavez/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar:/Users/greysonchavez/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/greysonchavez/.m2/repository/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar:/Users/greysonchavez/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar:/Users/greysonchavez/.m2/repository/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/plugins/maven-project-info-reports-plugin/3.4.5/maven-project-info-reports-plugin-3.4.5.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/reporting/maven-reporting-api/3.1.1/maven-reporting-api-3.1.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/reporting/maven-reporting-impl/3.2.0/maven-reporting-impl-3.2.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-artifact/3.1.0/maven-artifact-3.1.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-plugin-api/3.1.0/maven-plugin-api-3.1.0.jar:/Users/greysonchavez/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.plexus/0.0.0.M2a/org.eclipse.sisu.plexus-0.0.0.M2a.jar:/Users/greysonchavez/.m2/repository/javax/enterprise/cdi-api/1.0/cdi-api-1.0.jar:/Users/greysonchavez/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/Users/greysonchavez/.m2/repository/com/google/guava/guava/10.0.1/guava-10.0.1.jar:/Users/greysonchavez/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/Users/greysonchavez/.m2/repository/org/sonatype/sisu/sisu-guice/3.1.0/sisu-guice-3.1.0-no_aop.jar:/Users/greysonchavez/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/greysonchavez/.m2/repository/org/eclipse/sisu/org.eclipse.sisu.inject/0.0.0.M2a/org.eclipse.sisu.inject-0.0.0.M2a.jar:/Users/greysonchavez/.m2/repository/asm/asm/3.3.1/asm-3.3.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/shared/maven-dependency-tree/3.2.1/maven-dependency-tree-3.2.1.jar:/Users/greysonchavez/.m2/repository/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.jar:/Users/greysonchavez/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/shared/maven-shared-jar/3.0.0/maven-shared-jar-3.0.0.jar:/Users/greysonchavez/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/greysonchavez/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/Users/greysonchavez/.m2/repository/org/apache/bcel/bcel/6.7.0/bcel-6.7.0.jar:/Users/greysonchavez/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/greysonchavez/.m2/repository/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/shared/maven-common-artifact-filters/3.3.2/maven-common-artifact-filters-3.3.2.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/shared/maven-artifact-transfer/0.13.1/maven-artifact-transfer-0.13.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-core/3.0/maven-core-3.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar:/Users/greysonchavez/.m2/repository/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar:/Users/greysonchavez/.m2/repository/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar:/Users/greysonchavez/.m2/repository/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar:/Users/greysonchavez/.m2/repository/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar:/Users/greysonchavez/.m2/repository/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar:/Users/greysonchavez/.m2/repository/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar:/Users/greysonchavez/.m2/repository/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar:/Users/greysonchavez/.m2/repository/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar:/Users/greysonchavez/.m2/repository/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-component-annotations/2.0.0/plexus-component-annotations-2.0.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-api/1.13.0/maven-scm-api-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-manager-plexus/1.13.0/maven-scm-manager-plexus-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-hg/1.13.0/maven-scm-provider-hg-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-perforce/1.13.0/maven-scm-provider-perforce-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-starteam/1.13.0/maven-scm-provider-starteam-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-svn-commons/1.13.0/maven-scm-provider-svn-commons-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-svnexe/1.13.0/maven-scm-provider-svnexe-1.13.0.jar:/Users/greysonchavez/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvs-commons/1.13.0/maven-scm-provider-cvs-commons-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvsexe/1.13.0/maven-scm-provider-cvsexe-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-cvsjava/1.13.0/maven-scm-provider-cvsjava-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/netbeans/lib/cvsclient/20060125/cvsclient-20060125.jar:/Users/greysonchavez/.m2/repository/ch/ethz/ganymed/ganymed-ssh2/build210/ganymed-ssh2-build210.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-git-commons/1.13.0/maven-scm-provider-git-commons-1.13.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/scm/maven-scm-provider-gitexe/1.13.0/maven-scm-provider-gitexe-1.13.0.jar:/Users/greysonchavez/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-sink-api/1.11.1/doxia-sink-api-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-logging-api/1.11.1/doxia-logging-api-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-core/1.11.1/doxia-core-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/commons/commons-lang3/3.8.1/commons-lang3-3.8.1.jar:/Users/greysonchavez/.m2/repository/org/apache/commons/commons-text/1.3/commons-text-1.3.jar:/Users/greysonchavez/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/greysonchavez/.m2/repository/org/apache/httpcomponents/httpcore/4.4.14/httpcore-4.4.14.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-decoration-model/1.11.1/doxia-decoration-model-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-site-renderer/1.11.1/doxia-site-renderer-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-skin-model/1.11.1/doxia-skin-model-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.jar:/Users/greysonchavez/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/Users/greysonchavez/.m2/repository/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.jar:/Users/greysonchavez/.m2/repository/commons-chain/commons-chain/1.1/commons-chain-1.1.jar:/Users/greysonchavez/.m2/repository/dom4j/dom4j/1.1/dom4j-1.1.jar:/Users/greysonchavez/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/Users/greysonchavez/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-integration-tools/1.11.1/doxia-integration-tools-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-interpolation/1.26/plexus-interpolation-1.26.jar:/Users/greysonchavez/.m2/repository/commons-validator/commons-validator/1.7/commons-validator-1.7.jar:/Users/greysonchavez/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/greysonchavez/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/Users/greysonchavez/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/plugins/maven-site-plugin/3.12.1/maven-site-plugin-3.12.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/reporting/maven-reporting-exec/1.6.0/maven-reporting-exec-1.6.0.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-settings/3.2.5/maven-settings-3.2.5.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-settings-builder/3.2.5/maven-settings-builder-3.2.5.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/maven-archiver/3.5.2/maven-archiver-3.5.2.jar:/Users/greysonchavez/.m2/repository/org/apache/commons/commons-compress/1.20/commons-compress-1.20.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-archiver/4.2.7/plexus-archiver-4.2.7.jar:/Users/greysonchavez/.m2/repository/org/codehaus/plexus/plexus-io/3.2.0/plexus-io-3.2.0.jar:/Users/greysonchavez/.m2/repository/org/iq80/snappy/snappy/0.4/snappy-0.4.jar:/Users/greysonchavez/.m2/repository/org/tukaani/xz/1.9/xz-1.9.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-xhtml/1.11.1/doxia-module-xhtml-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-xhtml5/1.11.1/doxia-module-xhtml5-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-apt/1.11.1/doxia-module-apt-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-xdoc/1.11.1/doxia-module-xdoc-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-fml/1.11.1/doxia-module-fml-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-markdown/1.11.1/doxia-module-markdown-1.11.1.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-all/0.42.14/flexmark-all-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark/0.42.14/flexmark-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-abbreviation/0.42.14/flexmark-ext-abbreviation-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-admonition/0.42.14/flexmark-ext-admonition-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-anchorlink/0.42.14/flexmark-ext-anchorlink-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-aside/0.42.14/flexmark-ext-aside-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-attributes/0.42.14/flexmark-ext-attributes-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-autolink/0.42.14/flexmark-ext-autolink-0.42.14.jar:/Users/greysonchavez/.m2/repository/org/nibor/autolink/autolink/0.6.0/autolink-0.6.0.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-definition/0.42.14/flexmark-ext-definition-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-emoji/0.42.14/flexmark-ext-emoji-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-enumerated-reference/0.42.14/flexmark-ext-enumerated-reference-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-escaped-character/0.42.14/flexmark-ext-escaped-character-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-footnotes/0.42.14/flexmark-ext-footnotes-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-gfm-issues/0.42.14/flexmark-ext-gfm-issues-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-gfm-strikethrough/0.42.14/flexmark-ext-gfm-strikethrough-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-gfm-tables/0.42.14/flexmark-ext-gfm-tables-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-gfm-tasklist/0.42.14/flexmark-ext-gfm-tasklist-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-gfm-users/0.42.14/flexmark-ext-gfm-users-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-gitlab/0.42.14/flexmark-ext-gitlab-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-jekyll-front-matter/0.42.14/flexmark-ext-jekyll-front-matter-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-jekyll-tag/0.42.14/flexmark-ext-jekyll-tag-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-media-tags/0.42.14/flexmark-ext-media-tags-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-macros/0.42.14/flexmark-ext-macros-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-ins/0.42.14/flexmark-ext-ins-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-xwiki-macros/0.42.14/flexmark-ext-xwiki-macros-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-superscript/0.42.14/flexmark-ext-superscript-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-tables/0.42.14/flexmark-ext-tables-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-toc/0.42.14/flexmark-ext-toc-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-typographic/0.42.14/flexmark-ext-typographic-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-wikilink/0.42.14/flexmark-ext-wikilink-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-yaml-front-matter/0.42.14/flexmark-ext-yaml-front-matter-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-ext-youtube-embedded/0.42.14/flexmark-ext-youtube-embedded-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-formatter/0.42.14/flexmark-formatter-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-html-parser/0.42.14/flexmark-html-parser-0.42.14.jar:/Users/greysonchavez/.m2/repository/org/jsoup/jsoup/1.10.2/jsoup-1.10.2.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-jira-converter/0.42.14/flexmark-jira-converter-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-profile-pegdown/0.42.14/flexmark-profile-pegdown-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-util/0.42.14/flexmark-util-0.42.14.jar:/Users/greysonchavez/.m2/repository/com/vladsch/flexmark/flexmark-youtrack-converter/0.42.14/flexmark-youtrack-converter-0.42.14.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-confluence/1.11.1/doxia-module-confluence-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-docbook-simple/1.11.1/doxia-module-docbook-simple-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/apache/maven/doxia/doxia-module-twiki/1.11.1/doxia-module-twiki-1.11.1.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-server/9.4.46.v20220331/jetty-server-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-http/9.4.46.v20220331/jetty-http-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-io/9.4.46.v20220331/jetty-io-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-servlet/9.4.46.v20220331/jetty-servlet-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-security/9.4.46.v20220331/jetty-security-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-util-ajax/9.4.46.v20220331/jetty-util-ajax-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-webapp/9.4.46.v20220331/jetty-webapp-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-xml/9.4.46.v20220331/jetty-xml-9.4.46.v20220331.jar:/Users/greysonchavez/.m2/repository/org/eclipse/jetty/jetty-util/9.4.46.v20220331/jetty-util-9.4.46.v20220331.jar:"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/greysonchavez/Desktop/se310-assignment2-master/target/surefire/surefirebooter-20251022144610638_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/greysonchavez/Desktop/se310-assignment2-master/target/surefire/surefirebooter-20251026174725916_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="25"/>
@@ -60,7 +60,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testDriver" classname="com.se310.store.DriverTest" time="0.065">
+  <testcase name="testDriver" classname="com.se310.store.DriverTest" time="0.061">
     <system-out><![CDATA[>>> Processing DSL : define  store  store_123 name Chapman address "One University Drive, Orange, CA 92866"
 >>> Processing DSL : show  store  store_123
 <<< Store{id='store_123', address='Chapman', description='One University Drive, Orange, CA 92866', aislesMap={}, deviceMap={}, customerMap={}, inventoryMap={}, basketMap={}}
@@ -134,22 +134,29 @@
 >>> Processing DSL : define  inventory  inv_u21  location  store_123:aisle_A1:shelf_q1 capacity  1500  count  1000 type standard product  prod10
 &amp#27;[31mFailed due to: Product and Shelf Temperature Is Not Consistent for Command: Provision Inventory&amp#27;[0m
 >>> Processing DSL : define  inventory  inv_u22  location  store_123:aisle_A1:shelf_q2 capacity  1500  count  1000 type flexible product  prod11
+Shelf Temp: ambientproduct temp: ambient
 >>> Processing DSL : define  inventory  inv_u23  location  store_123:aisle_B2:shelf_q1 capacity  500  count  200  type flexible product  prod11
 &amp#27;[31mFailed due to: Product and Shelf Temperature Is Not Consistent for Command: Provision Inventory&amp#27;[0m
 >>> Processing DSL : define  inventory  inv_u24  location  store_123:aisle_B2:shelf_q2 capacity  500  count  200  type standard product  prod10
+Shelf Temp: ambientproduct temp: ambient
 >>> Processing DSL : define  inventory  inv_u25  location  store_123:aisle_A2:shelf_q1 capacity  200  count  100  type standard product  prod10
 &amp#27;[31mFailed due to: Product and Shelf Temperature Is Not Consistent for Command: Provision Inventory&amp#27;[0m
+>>> Processing DSL : define  inventory  inv_u26  location  store_123:aisle_A2:shelf_q3 capacity  300  count  100  type regular product  prod12
+&amp#27;[31mFailed due to: Inventory Type Must Be Either 'standard' or 'flexible' for Command: Provision Inventory On Line Number: 105&amp#27;[0m
 >>> Processing DSL : define  inventory  inv_u26  location  store_123:aisle_A2:shelf_q3 capacity  300  count  100  type flexible product  prod12
+Shelf Temp: refrigeratedproduct temp: refrigerated
 >>> Processing DSL : show  inventory  inv_u24
 <<< Inventory{id='inv_u24', inventoryLocation=InventoryLocation{storeLocation='StoreLocation{storeId='store_123', aisleId='aisle_B2'}', shelfId='shelf_q2'}, capacity=500, count=200, productId='prod10', type='standard'}
 >>> Processing DSL : show  inventory  inv_u21
 &amp#27;[31mFailed due to: Inventory Does Not Exist for Command: Show Inventory&amp#27;[0m
->>> Processing DSL : update  inventory  inv_u26  update_count  260
-&amp#27;[31mFailed due to: Inventory Is Smaller Than O or Larger Than Shelf Capacity for Command: Update Inventory&amp#27;[0m
 >>> Processing DSL : update  inventory  inv_u24  update_count  4
-Inventory{id='inv_u24', inventoryLocation=InventoryLocation{storeLocation='StoreLocation{storeId='store_123', aisleId='aisle_B2'}', shelfId='shelf_q2'}, capacity=500, count=204, productId='prod10', type='standard'}
+Inventory{id='inv_u24', inventoryLocation=InventoryLocation{storeLocation='StoreLocation{storeId='store_123', aisleId='aisle_B2'}', shelfId='shelf_q2'}, capacity=204, count=200, productId='prod10', type='standard'}
 >>> Processing DSL : update  inventory  inv_u21  update_count  7
 &amp#27;[31mFailed due to: Inventory Does Not Exist for Command: Update Inventory&amp#27;[0m
+>>> Processing DSL : update  inventory  inv_u26  update_count  260
+Inventory{id='inv_u26', inventoryLocation=InventoryLocation{storeLocation='StoreLocation{storeId='store_123', aisleId='aisle_A2'}', shelfId='shelf_q3'}, capacity=300, count=360, productId='prod12', type='flexible'}
+>>> Processing DSL : update  inventory  inv_u26  update_count  400
+&amp#27;[31mFailed due to: Inventory is Larger Than Shelf Capacity for Command: Update Inventory&amp#27;[0m
 >>> Processing DSL : define  customer  cust_AB        first_name  JSON  last_name  WALLACE type  guest  email_address  json.wallace@ymail.com  account  json
 >>> Processing DSL : define  customer  cust_21        first_name  BILL  last_name  ROSE type  registered  email_address  bill.rose@gmail.com  account  bill
 >>> Processing DSL : define  customer  cust_22        first_name  MARY last_name  KELVIN type  registered  email_address  mary.kevin@yahoomail.com  account  mary
@@ -158,15 +165,15 @@ Inventory{id='inv_u24', inventoryLocation=InventoryLocation{storeLocation='Store
 >>> Processing DSL : define  customer  cust_24        first_name  MARIA last_name  WILIAMSON type  registered  email_address  maria4567@ymail.com  account  maria
 >>> Processing DSL : define  customer  cust_S2        first_name  SALINA  last_name  GOMEZ type  registered  email_address  salina@gmail.com  account  salina
 >>> Processing DSL : update  customer  cust_S2  location  store_123:aisle_B2
-<<< Customer{id='cust_S2', firstName='SALINA', lastName='GOMEZ', type=registered, email='salina@gmail.com', accountAddress='salina', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_B2'}, lastSeen=Wed Oct 22 14:46:11 PDT 2025, basketId=null}
+<<< Customer{id='cust_S2', firstName='SALINA', lastName='GOMEZ', type=registered, email='salina@gmail.com', accountAddress='salina', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_B2'}, lastSeen=Sun Oct 26 17:47:26 PDT 2025, basketId=null}
 >>> Processing DSL : update  customer  cust_21  location  store_123:aisle_A2
-<<< Customer{id='cust_21', firstName='BILL', lastName='ROSE', type=registered, email='bill.rose@gmail.com', accountAddress='bill', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Wed Oct 22 14:46:11 PDT 2025, basketId=null}
+<<< Customer{id='cust_21', firstName='BILL', lastName='ROSE', type=registered, email='bill.rose@gmail.com', accountAddress='bill', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Sun Oct 26 17:47:26 PDT 2025, basketId=null}
 >>> Processing DSL : update  customer  cust_22  location  store_123:aisle_A2
-<<< Customer{id='cust_22', firstName='MARY', lastName='KELVIN', type=registered, email='mary.kevin@yahoomail.com', accountAddress='mary', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Wed Oct 22 14:46:11 PDT 2025, basketId=null}
+<<< Customer{id='cust_22', firstName='MARY', lastName='KELVIN', type=registered, email='mary.kevin@yahoomail.com', accountAddress='mary', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Sun Oct 26 17:47:26 PDT 2025, basketId=null}
 >>> Processing DSL : show  customer  cust_21
-Customer{id='cust_21', firstName='BILL', lastName='ROSE', type=registered, email='bill.rose@gmail.com', accountAddress='bill', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Wed Oct 22 14:46:11 PDT 2025, basketId=null}
+Customer{id='cust_21', firstName='BILL', lastName='ROSE', type=registered, email='bill.rose@gmail.com', accountAddress='bill', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Sun Oct 26 17:47:26 PDT 2025, basketId=null}
 >>> Processing DSL : show  customer  cust_S2
-Customer{id='cust_S2', firstName='SALINA', lastName='GOMEZ', type=registered, email='salina@gmail.com', accountAddress='salina', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_B2'}, lastSeen=Wed Oct 22 14:46:11 PDT 2025, basketId=null}
+Customer{id='cust_S2', firstName='SALINA', lastName='GOMEZ', type=registered, email='salina@gmail.com', accountAddress='salina', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_B2'}, lastSeen=Sun Oct 26 17:47:26 PDT 2025, basketId=null}
 >>> Processing DSL : define basket b1
 >>> Processing DSL : define basket b2
 >>> Processing DSL : define basket b3
@@ -182,21 +189,23 @@ Customer{id='cust_S2', firstName='SALINA', lastName='GOMEZ', type=registered, em
 >>> Processing DSL : get_customer_basket  cust_22
 <<< Basket{id='b3', productMap={}}
 >>> Processing DSL : add_basket_item  b1  product  prod10  item_count  4
-&amp#27;[31mError : Customer{id='cust_21', firstName='BILL', lastName='ROSE', type=registered, email='bill.rose@gmail.com', accountAddress='bill', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Wed Oct 22 14:46:11 PDT 2025, basketId=Basket{id='b1', productMap={}}}&amp#27;[0m
+&amp#27;[31mError : Customer{id='cust_21', firstName='BILL', lastName='ROSE', type=registered, email='bill.rose@gmail.com', accountAddress='bill', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Sun Oct 26 17:47:26 PDT 2025, basketId=Basket{id='b1', productMap={}}}&amp#27;[0m
 &amp#27;[31mFailed due to: Customer Is Not Near Product for Command: Add Product&amp#27;[0m
 >>> Processing DSL : add_basket_item  b3  product  prod11  item_count  2
-&amp#27;[31mError : Customer{id='cust_22', firstName='MARY', lastName='KELVIN', type=registered, email='mary.kevin@yahoomail.com', accountAddress='mary', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Wed Oct 22 14:46:11 PDT 2025, basketId=Basket{id='b3', productMap={}}}&amp#27;[0m
+&amp#27;[31mError : Customer{id='cust_22', firstName='MARY', lastName='KELVIN', type=registered, email='mary.kevin@yahoomail.com', accountAddress='mary', ageGroup=null, storeLocation=StoreLocation{storeId='store_123', aisleId='aisle_A2'}, lastSeen=Sun Oct 26 17:47:26 PDT 2025, basketId=Basket{id='b3', productMap={}}}&amp#27;[0m
 &amp#27;[31mFailed due to: Customer Is Not Near Product for Command: Add Product&amp#27;[0m
 >>> Processing DSL : add_basket_item  b3  product  prod12  item_count  7
 <<< Basket{id='b3', productMap={prod12=7}}
 >>> Processing DSL : remove_basket_item  b1  product  prod10  item_count  1
 &amp#27;[31mFailed due to: Product Does Not Exist for Command: Remove Product&amp#27;[0m
 >>> Processing DSL : remove_basket_item  b3  product  prod12  item_count  5
-Basket{id='b3', productMap={prod12=2}}
+&amp#27;[31mError : Inventory{id='inv_u26', inventoryLocation=InventoryLocation{storeLocation='StoreLocation{storeId='store_123', aisleId='aisle_A2'}', shelfId='shelf_q3'}, capacity=300, count=353, productId='prod12', type='flexible'}&amp#27;[0m
+&amp#27;[31mFailed due to: There Is Not Enough Capacity on the Shelf for Command: Remove Product&amp#27;[0m
 >>> Processing DSL : clear_basket  b3
-<<< Basket{id='b3', productMap={}}
+&amp#27;[31mError : Inventory{id='inv_u26', inventoryLocation=InventoryLocation{storeLocation='StoreLocation{storeId='store_123', aisleId='aisle_A2'}', shelfId='shelf_q3'}, capacity=300, count=353, productId='prod12', type='flexible'}&amp#27;[0m
+&amp#27;[31mFailed due to: There Is Not Enough Capacity on the Shelf for Command: Remove Product&amp#27;[0m
 >>> Processing DSL : Show  basket_items  b3  # it is empty
-&amp#27;[31mFailed due to: Basket Has Not Being Assigned for Command: Show Basket Product&amp#27;[0m
+<<< Basket{id='b3', productMap={prod12=7}}
 >>> Processing DSL : Show  basket_items  b1
 <<< Basket{id='b1', productMap={}}
 >>> Processing DSL : Show  basket_items  b5  #it is not assigned yet
@@ -214,20 +223,23 @@ Basket{id='b3', productMap={prod12=2}}
 >>> Processing DSL : create_event  cam_A1  event  item_added_to_basket b1 prod10
 <<< Processing Event : item_added_to_basket b1 prod10
 [StoreNotifier] store_123 | Device: cam_A1 | Notifaction: Event - item_added_to_basket b1 prod10
-2025-10-22T14:46:11.254416
-[EventLogger] 2025-10-22T14:46:11.254416 - Device: cam_A1 | Type: Event | Message: item_added_to_basket b1 prod10
+2025-10-26T17:47:26.343135
+[EventLogger] 2025-10-26T17:47:26.343135 - Device: cam_A1 | Type: Event | Message: item_added_to_basket b1 prod10
+[DeviceStatistics] Device: cam_A1 | Num Events: 1 | Num Commands: 0 | Message: item_added_to_basket b1 prod10
 >>> Processing DSL : create_event  cam_A1  event  item_added_to_basket b1 prod11
 <<< Processing Event : item_added_to_basket b1 prod11
 [StoreNotifier] store_123 | Device: cam_A1 | Notifaction: Event - item_added_to_basket b1 prod11
-2025-10-22T14:46:11.257278
-[EventLogger] 2025-10-22T14:46:11.257278 - Device: cam_A1 | Type: Event | Message: item_added_to_basket b1 prod11
+2025-10-26T17:47:26.346654
+[EventLogger] 2025-10-26T17:47:26.346654 - Device: cam_A1 | Type: Event | Message: item_added_to_basket b1 prod11
+[DeviceStatistics] Device: cam_A1 | Num Events: 2 | Num Commands: 0 | Message: item_added_to_basket b1 prod11
 >>> Processing DSL : create_event  mic_A1  event  custmer_asked_question cust_S2 "where can I find the milk?"
 <<< Processing Event : custmer_asked_question cust_S2 where can I find the milk?
 [StoreNotifier] store_123 | Device: mic_A1 | Notifaction: Event - custmer_asked_question cust_S2 where can I find the milk?
-2025-10-22T14:46:11.257401
-[EventLogger] 2025-10-22T14:46:11.257401 - Device: mic_A1 | Type: Event | Message: custmer_asked_question cust_S2 where can I find the milk?
+2025-10-26T17:47:26.346789
+[EventLogger] 2025-10-26T17:47:26.346789 - Device: mic_A1 | Type: Event | Message: custmer_asked_question cust_S2 where can I find the milk?
+[DeviceStatistics] Device: mic_A1 | Num Events: 1 | Num Commands: 0 | Message: custmer_asked_question cust_S2 where can I find the milk?
 >>> Processing DSL : Appliance Commands
-&amp#27;[31mFailed due to: Unrecognized Command for Command: Appliance Commands On Line Number: 230&amp#27;[0m
+&amp#27;[31mFailed due to: Unrecognized Command for Command: Appliance Commands On Line Number: 233&amp#27;[0m
 >>> Processing DSL : define  device  rob_1  name  ROBOT_1  type  robot location  store_123:aisle_A1
 >>> Processing DSL : define  device  rob_2  name  ROBOT_2  type  robot location  store_123:aisle_A2
 >>> Processing DSL : define  device  spk_1  name  SPEAKER_1  type  speaker location  store_123:aisle_A1
@@ -242,33 +254,39 @@ Basket{id='b3', productMap={prod12=2}}
 >>> Processing DSL : create  event  rob_2  event SPILLED_MILK store_123:aisle_A2
 Processing Event : SPILLED_MILK store_123:aisle_A2
 [StoreNotifier] store_123 | Device: rob_2 | Notifaction: Event - SPILLED_MILK store_123:aisle_A2
-2025-10-22T14:46:11.257824
-[EventLogger] 2025-10-22T14:46:11.257824 - Device: rob_2 | Type: Event | Message: SPILLED_MILK store_123:aisle_A2
+2025-10-26T17:47:26.347656
+[EventLogger] 2025-10-26T17:47:26.347656 - Device: rob_2 | Type: Event | Message: SPILLED_MILK store_123:aisle_A2
+[DeviceStatistics] Device: rob_2 | Num Events: 1 | Num Commands: 0 | Message: SPILLED_MILK store_123:aisle_A2
 >>> Processing DSL : create  event  rob_1  event CUSTOMER_QUESTION "where is the detergent?"
 Processing Event : CUSTOMER_QUESTION where is the detergent?
 [StoreNotifier] store_123 | Device: rob_1 | Notifaction: Event - CUSTOMER_QUESTION where is the detergent?
-2025-10-22T14:46:11.258234
-[EventLogger] 2025-10-22T14:46:11.258234 - Device: rob_1 | Type: Event | Message: CUSTOMER_QUESTION where is the detergent?
+2025-10-26T17:47:26.347851
+[EventLogger] 2025-10-26T17:47:26.347851 - Device: rob_1 | Type: Event | Message: CUSTOMER_QUESTION where is the detergent?
+[DeviceStatistics] Device: rob_1 | Num Events: 1 | Num Commands: 0 | Message: CUSTOMER_QUESTION where is the detergent?
 >>> Processing DSL : create  event  turn_a1  event PRICE_CHECK prod11
 Processing Event : PRICE_CHECK prod11
 [StoreNotifier] store_123 | Device: turn_a1 | Notifaction: Event - PRICE_CHECK prod11
-2025-10-22T14:46:11.258459
-[EventLogger] 2025-10-22T14:46:11.258459 - Device: turn_a1 | Type: Event | Message: PRICE_CHECK prod11
+2025-10-26T17:47:26.347936
+[EventLogger] 2025-10-26T17:47:26.347936 - Device: turn_a1 | Type: Event | Message: PRICE_CHECK prod11
+[DeviceStatistics] Device: turn_a1 | Num Events: 1 | Num Commands: 0 | Message: PRICE_CHECK prod11
 >>> Processing DSL : create  command  rob_1  message  STOCK_SHELF store_123:aisle_A2:shelf_q3
 <<< Processing Command : STOCK_SHELF store_123:aisle_A2:shelf_q3
 [StoreNotifier] store_123 | Device: rob_1 | Notifaction: Command - STOCK_SHELF store_123:aisle_A2:shelf_q3
-2025-10-22T14:46:11.258815
-[EventLogger] 2025-10-22T14:46:11.258815 - Device: rob_1 | Type: Command | Message: STOCK_SHELF store_123:aisle_A2:shelf_q3
+2025-10-26T17:47:26.348073
+[EventLogger] 2025-10-26T17:47:26.348073 - Device: rob_1 | Type: Command | Message: STOCK_SHELF store_123:aisle_A2:shelf_q3
+[DeviceStatistics] Device: rob_1 | Num Events: 1 | Num Commands: 1 | Message: STOCK_SHELF store_123:aisle_A2:shelf_q3
 >>> Processing DSL : create  command  rob_2  message  CLEAN_FLOOR store_123:aisle_A2
 <<< Processing Command : CLEAN_FLOOR store_123:aisle_A2
 [StoreNotifier] store_123 | Device: rob_2 | Notifaction: Command - CLEAN_FLOOR store_123:aisle_A2
-2025-10-22T14:46:11.259016
-[EventLogger] 2025-10-22T14:46:11.259016 - Device: rob_2 | Type: Command | Message: CLEAN_FLOOR store_123:aisle_A2
+2025-10-26T17:47:26.348157
+[EventLogger] 2025-10-26T17:47:26.348157 - Device: rob_2 | Type: Command | Message: CLEAN_FLOOR store_123:aisle_A2
+[DeviceStatistics] Device: rob_2 | Num Events: 1 | Num Commands: 1 | Message: CLEAN_FLOOR store_123:aisle_A2
 >>> Processing DSL : create  command  turn_a3  message  COUNT_INVENTORY store_123:aisle_A2
 <<< Processing Command : COUNT_INVENTORY store_123:aisle_A2
 [StoreNotifier] store_123 | Device: turn_a3 | Notifaction: Command - COUNT_INVENTORY store_123:aisle_A2
-2025-10-22T14:46:11.259210
-[EventLogger] 2025-10-22T14:46:11.25921 - Device: turn_a3 | Type: Command | Message: COUNT_INVENTORY store_123:aisle_A2
+2025-10-26T17:47:26.348232
+[EventLogger] 2025-10-26T17:47:26.348232 - Device: turn_a3 | Type: Command | Message: COUNT_INVENTORY store_123:aisle_A2
+[DeviceStatistics] Device: turn_a3 | Num Events: 0 | Num Commands: 1 | Message: COUNT_INVENTORY store_123:aisle_A2
 ]]></system-out>
     <system-err><![CDATA[java.lang.instrument.IllegalClassFormatException: Error while instrumenting sun/util/resources/cldr/provider/CLDRLocaleDataMetaInfo with JaCoCo 0.8.10.202304240956/8ea9668.
 	at org.jacoco.agent.rt.internal_4a7f17c.CoverageTransformer.transform(CoverageTransformer.java:94)
@@ -302,8 +320,8 @@ Processing Event : PRICE_CHECK prod11
 	at java.base/java.lang.String.valueOf(String.java:4530)
 	at com.se310.store.model.Customer.toString(Customer.java:206)
 	at java.base/java.lang.String.valueOf(String.java:4530)
-	at com.se310.store.model.CommandProcessor.processCommand(CommandProcessor.java:102)
-	at com.se310.store.model.CommandProcessor.processCommandFile(CommandProcessor.java:189)
+	at com.se310.store.model.CommandProcessor.processCommand(CommandProcessor.java:110)
+	at com.se310.store.model.CommandProcessor.processCommandFile(CommandProcessor.java:197)
 	at com.se310.store.DriverTest.lambda$testDriver$0(DriverTest.java:27)
 	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
 	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:40)
@@ -424,8 +442,8 @@ java.lang.instrument.IllegalClassFormatException: Error while instrumenting sun/
 	at java.base/java.lang.String.valueOf(String.java:4530)
 	at com.se310.store.model.Customer.toString(Customer.java:206)
 	at java.base/java.lang.String.valueOf(String.java:4530)
-	at com.se310.store.model.CommandProcessor.processCommand(CommandProcessor.java:102)
-	at com.se310.store.model.CommandProcessor.processCommandFile(CommandProcessor.java:189)
+	at com.se310.store.model.CommandProcessor.processCommand(CommandProcessor.java:110)
+	at com.se310.store.model.CommandProcessor.processCommandFile(CommandProcessor.java:197)
 	at com.se310.store.DriverTest.lambda$testDriver$0(DriverTest.java:27)
 	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
 	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:40)

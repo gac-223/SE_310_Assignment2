@@ -49,21 +49,17 @@ public class DeviceStatistics implements Observer {
 
                 // if deviceCommandCounts contains deviceId, then increase count by 1
                 // else set to 1
-                if (deviceCommandCounts.containsKey(deviceId)) {
-                    deviceCommandCounts.put(deviceId, deviceCommandCounts.get(deviceId) + 1) ;
-                } else {
-                    deviceCommandCounts.put(deviceId, 1) ;
-                }
+                deviceCommandCounts.put(deviceId, deviceCommandCounts.getOrDefault(deviceId, 0) + 1) ;
                 break ;
-            case "Event":
-                if (deviceEventCounts.containsKey(deviceId)) {
-                    deviceEventCounts.put(deviceId, deviceEventCounts.get(deviceId) + 1) ;
-                } else {
-                    deviceEventCounts.put(deviceId, 1) ;
-                }
 
+
+            case "Event":
+
+                deviceEventCounts.put(deviceId, deviceEventCounts.getOrDefault(deviceId, 0) + 1) ;
                 break ;
         }
+
+        System.out.println("[DeviceStatistics] Device: " + deviceId + " | Num Events: " + this.deviceEventCounts.getOrDefault(deviceId, 0) + " | Num Commands: " + this.deviceCommandCounts.getOrDefault(deviceId, 0) + " | Message: " + message) ;
     }
 
 

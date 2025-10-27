@@ -19,9 +19,16 @@ public class StoreServiceProxy {
     private StoreService storeService ;
     String accessToken ;
 
-    private Boolean checkAuthorization() {
-        return true ;
+    public StoreServiceProxy(StoreService storeService, String accessToken) {
+        this.storeService = storeService ;
+
+        this.accessToken = accessToken ;
+    }
+
+    private Boolean checkAuthorization(String token) {
+        return accessToken.equals(token) ;
     }
 
     //TODO: Implement Proxy Pattern allowing command execution only with a valid token
+
 }

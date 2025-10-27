@@ -152,9 +152,9 @@ public class Basket {
 
         //If product capacity on the shelf is smaller than what the customer is trying to put back throw and exception
 <span class="fc" id="L154">        Inventory inventory = inventoryList.get(0);</span>
-<span class="pc bpc" id="L155" title="1 of 2 branches missed.">        if((inventory.getCount() + count) &gt; inventory.getCapacity()){</span>
-<span class="nc" id="L156">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error : &quot; + inventory + &quot;\u001B[0m&quot;);</span>
-<span class="nc" id="L157">            throw new StoreException(&quot;Remove Product&quot;, &quot;There Is Not Enough Capacity on the Shelf&quot;);</span>
+<span class="fc bfc" id="L155" title="All 2 branches covered.">        if((inventory.getCount() + count) &gt; inventory.getCapacity()){</span>
+<span class="fc" id="L156">            System.out.println(&quot;\u001B[31m&quot; + &quot;Error : &quot; + inventory + &quot;\u001B[0m&quot;);</span>
+<span class="fc" id="L157">            throw new StoreException(&quot;Remove Product&quot;, &quot;There Is Not Enough Capacity on the Shelf&quot;);</span>
         }
 
         //Remove the product in the basket and increment product on the shelf

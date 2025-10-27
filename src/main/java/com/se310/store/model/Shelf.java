@@ -3,6 +3,9 @@ package com.se310.store.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.se310.store.strategy.FlexibleInventoryUpdateStrategy;
+import com.se310.store.strategy.StandardInventoryUpdateStrategy;
+
 /**
  * Shelf class implementation representing shelf of the Aisle
  *
@@ -145,6 +148,18 @@ public class Shelf {
         //Make sure already does not exist in the store
         if(inventoryMap.putIfAbsent(inventoryId,inventory) != null)
             throw new StoreException("Add Inventory", "Inventory Already Exists");
+
+        
+        switch (type) {            
+            case InventoryType.flexible:
+                inventory.setInventoryUpdateStrategy(new FlexibleInventoryUpdateStrategy()) ;
+                break ;
+            case InventoryType.standard:
+                inventory.setInventoryUpdateStrategy(new StandardInventoryUpdateStrategy());
+                break ;
+            default:
+                break ;
+        }
 
         return inventory;
     }

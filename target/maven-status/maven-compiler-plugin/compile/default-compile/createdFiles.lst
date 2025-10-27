@@ -27,6 +27,7 @@ com/se310/store/model/InventoryType.class
 com/se310/store/model/Basket.class
 com/se310/store/model/CommandAPI.class
 com/se310/store/model/Product.class
+com/se310/store/factory/CustomerFactory$1.class
 com/se310/store/model/StoreLocation.class
 com/se310/store/observer/Observable.class
 com/se310/store/model/Store.class

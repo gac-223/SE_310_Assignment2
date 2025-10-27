@@ -68,10 +68,10 @@ public abstract class Device implements Observable {
 
 <span class="fc" id="L69">                observer.update(this.id, eventType, eventMessage) ;</span>
 
-<span class="pc" id="L71">            }  catch (Exception e) {</span>
+<span class="nc" id="L71">            }  catch (Exception e) {</span>
                 // log info about exception
-            }
-        }
+<span class="fc" id="L73">            }</span>
+<span class="fc" id="L74">        }</span>
 
 <span class="fc" id="L76">    }</span>
 
@@ -163,10 +163,10 @@ public abstract class Device implements Observable {
     @Override
     public String toString() {
 <span class="fc" id="L165">        return &quot;Device{&quot; +</span>
-<span class="fc" id="L166">                &quot;id='&quot; + id + '\'' +</span>
-<span class="fc" id="L167">                &quot;, name='&quot; + name + '\'' +</span>
-<span class="fc" id="L168">                &quot;, storeLocation=&quot; + storeLocation +</span>
-<span class="fc" id="L169">                &quot;, type='&quot; + type + '\'' +</span>
+                &quot;id='&quot; + id + '\'' +
+                &quot;, name='&quot; + name + '\'' +
+                &quot;, storeLocation=&quot; + storeLocation +
+                &quot;, type='&quot; + type + '\'' +
                 '}';
     }
 }

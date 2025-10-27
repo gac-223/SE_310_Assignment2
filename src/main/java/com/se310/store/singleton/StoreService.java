@@ -7,6 +7,7 @@ import com.se310.store.model.*;
 import com.se310.store.observer.DeviceStatistics;
 import com.se310.store.observer.EventLogger;
 import com.se310.store.observer.StoreNotifier;
+import com.se310.store.strategy.InventoryUpdateStrategy;
 
 // implement an interface for StoreService And StoreServiceProxy to implement
     // StoreServiceProxy controls access to storeService singleton
@@ -22,11 +23,8 @@ import com.se310.store.observer.StoreNotifier;
 public class StoreService {
 
     //TODO: Implement Thread Safe Double-Checked Locking Singleton Pattern
-    private static StoreService instance ;
+    private static volatile StoreService instance ;
 
-    private StoreService() {
-
-    }
 
     public static StoreService getInstance() {
         if (instance == null) {
@@ -46,6 +44,7 @@ public class StoreService {
     private static final Map<String, Inventory> inventoryMap;
     private static final Map<String, Basket> basketMap;
     private static final Map<String, Device> deviceMap;
+
 
 
     // Initialize maps
@@ -171,6 +170,7 @@ public class StoreService {
         Product product = productMap.get(productId);
         Inventory inventory;
 
+
         //Check to see if Store exists
         if(store == null){
             throw new StoreException("Provision Inventory", "Store Does Not Exist");
@@ -192,6 +192,9 @@ public class StoreService {
                     throw new StoreException("Provision Inventory", "Product and Shelf Temperature " +
                             "Is Not Consistent");
                 }
+
+                System.out.println("Shelf Temp: " + shelf.getTemperature() + "product temp: " + product.getTemperature()) ;
+
 
                 //Add Inventory to the Shelf
                 inventory = shelf.addInventory(inventoryId, storeId, aisleNumber, shelfId,
@@ -250,6 +253,7 @@ public class StoreService {
     }
 
 
+    // this should be reimplemented into the facadePattern
     public Customer provisionCustomer(String customerId, String firstName, String lastName,
                                       CustomerType type, String email, String address, String token)
             throws StoreException {
@@ -534,4 +538,5 @@ public class StoreService {
         }
         appliance.processCommand(command);
     }
+
 }

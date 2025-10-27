@@ -3,6 +3,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
+import com.se310.store.strategy.FlexibleInventoryUpdateStrategy;
+import com.se310.store.strategy.StandardInventoryUpdateStrategy;
+
 /**
  * Shelf class implementation representing shelf of the Aisle
  *
@@ -27,21 +30,21 @@ public class Shelf {
      * @param description
      * @param temperature
      */
-<span class="fc" id="L30">    public Shelf(String id, String name, ShelfLevel level, String description, Temperature temperature) {</span>
-<span class="fc" id="L31">        this.id = id;</span>
-<span class="fc" id="L32">        this.name = name;</span>
-<span class="fc" id="L33">        this.level = level;</span>
-<span class="fc" id="L34">        this.description = description;</span>
-<span class="fc" id="L35">        this.temperature = temperature;</span>
-<span class="fc" id="L36">        this.inventoryMap = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L37">    }</span>
+<span class="fc" id="L33">    public Shelf(String id, String name, ShelfLevel level, String description, Temperature temperature) {</span>
+<span class="fc" id="L34">        this.id = id;</span>
+<span class="fc" id="L35">        this.name = name;</span>
+<span class="fc" id="L36">        this.level = level;</span>
+<span class="fc" id="L37">        this.description = description;</span>
+<span class="fc" id="L38">        this.temperature = temperature;</span>
+<span class="fc" id="L39">        this.inventoryMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L40">    }</span>
 
     /**
      * Getter method for Shelf id
      * @return
      */
     public String getId() {
-<span class="nc" id="L44">        return id;</span>
+<span class="nc" id="L47">        return id;</span>
     }
 
     /**
@@ -49,15 +52,15 @@ public class Shelf {
      * @param id
      */
     public void setId(String id) {
-<span class="nc" id="L52">        this.id = id;</span>
-<span class="nc" id="L53">    }</span>
+<span class="nc" id="L55">        this.id = id;</span>
+<span class="nc" id="L56">    }</span>
 
     /**
      * Getter method for Shelf name
      * @return
      */
     public String getName() {
-<span class="nc" id="L60">        return name;</span>
+<span class="nc" id="L63">        return name;</span>
     }
 
     /**
@@ -65,15 +68,15 @@ public class Shelf {
      * @param name
      */
     public void setName(String name) {
-<span class="nc" id="L68">        this.name = name;</span>
-<span class="nc" id="L69">    }</span>
+<span class="nc" id="L71">        this.name = name;</span>
+<span class="nc" id="L72">    }</span>
 
     /**
      * Getter method for Shelf level
      * @return
      */
     public ShelfLevel getLevel() {
-<span class="fc" id="L76">        return level;</span>
+<span class="fc" id="L79">        return level;</span>
     }
 
     /**
@@ -81,15 +84,15 @@ public class Shelf {
      * @param level
      */
     public void setLevel(ShelfLevel level) {
-<span class="nc" id="L84">        this.level = level;</span>
-<span class="nc" id="L85">    }</span>
+<span class="nc" id="L87">        this.level = level;</span>
+<span class="nc" id="L88">    }</span>
 
     /**
      * Getter method for Shelf description
      * @return
      */
     public String getDescription() {
-<span class="nc" id="L92">        return description;</span>
+<span class="nc" id="L95">        return description;</span>
     }
 
     /**
@@ -97,15 +100,15 @@ public class Shelf {
      * @param description
      */
     public void setDescription(String description) {
-<span class="nc" id="L100">        this.description = description;</span>
-<span class="nc" id="L101">    }</span>
+<span class="nc" id="L103">        this.description = description;</span>
+<span class="nc" id="L104">    }</span>
 
     /**
      * Getter method for Shelf temperature
      * @return
      */
     public Temperature getTemperature() {
-<span class="fc" id="L108">        return temperature;</span>
+<span class="fc" id="L111">        return temperature;</span>
     }
 
     /**
@@ -113,8 +116,8 @@ public class Shelf {
      * @param temperature
      */
     public void setTemperature(Temperature temperature) {
-<span class="nc" id="L116">        this.temperature = temperature;</span>
-<span class="nc" id="L117">    }</span>
+<span class="nc" id="L119">        this.temperature = temperature;</span>
+<span class="nc" id="L120">    }</span>
 
     /**
      * Method for adding Inventory to a particular Store Shelf. If Inventory already exist or
@@ -135,18 +138,30 @@ public class Shelf {
                                   String shelfId, int capacity, int count, String productId, InventoryType type) throws StoreException {
 
         //Check to see if count within proper bounds
-<span class="pc bpc" id="L138" title="2 of 4 branches missed.">        if(count &lt; 0 || count &gt; capacity)</span>
-<span class="nc" id="L139">            throw new StoreException(&quot;Add Inventory&quot;, &quot;Inventory Is Smaller Than O &quot; +</span>
+<span class="pc bpc" id="L141" title="2 of 4 branches missed.">        if(count &lt; 0 || count &gt; capacity)</span>
+<span class="nc" id="L142">            throw new StoreException(&quot;Add Inventory&quot;, &quot;Inventory Is Smaller Than O &quot; +</span>
                     &quot;or Larger Than Shelf Capacity&quot;);
 
-<span class="fc" id="L142">        InventoryLocation location = new InventoryLocation(storeId, aisleNumber, shelfId);</span>
-<span class="fc" id="L143">        Inventory inventory = new Inventory(inventoryId, location, capacity, count, productId, type);</span>
+<span class="fc" id="L145">        InventoryLocation location = new InventoryLocation(storeId, aisleNumber, shelfId);</span>
+<span class="fc" id="L146">        Inventory inventory = new Inventory(inventoryId, location, capacity, count, productId, type);</span>
 
         //Make sure already does not exist in the store
-<span class="pc bpc" id="L146" title="1 of 2 branches missed.">        if(inventoryMap.putIfAbsent(inventoryId,inventory) != null)</span>
-<span class="nc" id="L147">            throw new StoreException(&quot;Add Inventory&quot;, &quot;Inventory Already Exists&quot;);</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">        if(inventoryMap.putIfAbsent(inventoryId,inventory) != null)</span>
+<span class="nc" id="L150">            throw new StoreException(&quot;Add Inventory&quot;, &quot;Inventory Already Exists&quot;);</span>
 
-<span class="fc" id="L149">        return inventory;</span>
+        
+<span class="pc bpc" id="L153" title="1 of 3 branches missed.">        switch (type) {            </span>
+            case InventoryType.flexible:
+<span class="fc" id="L155">                inventory.setInventoryUpdateStrategy(new FlexibleInventoryUpdateStrategy()) ;</span>
+<span class="fc" id="L156">                break ;</span>
+            case InventoryType.standard:
+<span class="fc" id="L158">                inventory.setInventoryUpdateStrategy(new StandardInventoryUpdateStrategy());</span>
+<span class="fc" id="L159">                break ;</span>
+            default:
+                break ;
+        }
+
+<span class="fc" id="L164">        return inventory;</span>
     }
 
     /**
@@ -154,18 +169,18 @@ public class Shelf {
      * @return
      */
     public Map&lt;String, Inventory&gt; getInventoryMap(){
-<span class="fc" id="L157">        return this.inventoryMap;</span>
+<span class="fc" id="L172">        return this.inventoryMap;</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L162">        return &quot;Shelf{&quot; +</span>
-                &quot;id='&quot; + id + '\'' +
-                &quot;, name='&quot; + name + '\'' +
-                &quot;, level=&quot; + level +
-                &quot;, description='&quot; + description + '\'' +
-                &quot;, temperature=&quot; + temperature +
-                &quot;, inventoryMap=&quot; + inventoryMap +
+<span class="fc" id="L177">        return &quot;Shelf{&quot; +</span>
+<span class="fc" id="L178">                &quot;id='&quot; + id + '\'' +</span>
+<span class="fc" id="L179">                &quot;, name='&quot; + name + '\'' +</span>
+<span class="fc" id="L180">                &quot;, level=&quot; + level +</span>
+<span class="fc" id="L181">                &quot;, description='&quot; + description + '\'' +</span>
+<span class="fc" id="L182">                &quot;, temperature=&quot; + temperature +</span>
+<span class="fc" id="L183">                &quot;, inventoryMap=&quot; + inventoryMap +</span>
                 '}';
     }
 }

@@ -34,4 +34,5 @@
 /Users/greysonchavez/Desktop/se310-assignment2-master/src/main/java/com/se310/store/proxy/StoreServiceProxy.java
 /Users/greysonchavez/Desktop/se310-assignment2-master/src/main/java/com/se310/store/singleton/StoreService.java
 /Users/greysonchavez/Desktop/se310-assignment2-master/src/main/java/com/se310/store/strategy/FlexibleInventoryUpdateStrategy.java
+/Users/greysonchavez/Desktop/se310-assignment2-master/src/main/java/com/se310/store/strategy/InventoryUpdateStrategy.java
 /Users/greysonchavez/Desktop/se310-assignment2-master/src/main/java/com/se310/store/strategy/StandardInventoryUpdateStrategy.java

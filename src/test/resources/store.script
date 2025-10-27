@@ -102,7 +102,9 @@ define  inventory  inv_u22  location  store_123:aisle_A1:shelf_q2 capacity  1500
 define  inventory  inv_u23  location  store_123:aisle_B2:shelf_q1 capacity  500  count  200  type flexible product  prod11
 define  inventory  inv_u24  location  store_123:aisle_B2:shelf_q2 capacity  500  count  200  type standard product  prod10
 define  inventory  inv_u25  location  store_123:aisle_A2:shelf_q1 capacity  200  count  100  type standard product  prod10
+define  inventory  inv_u26  location  store_123:aisle_A2:shelf_q3 capacity  300  count  100  type regular product  prod12
 define  inventory  inv_u26  location  store_123:aisle_A2:shelf_q3 capacity  300  count  100  type flexible product  prod12
+
 
 # Show the details of the inventory
 # show  inventory  <inventory_id>
@@ -112,9 +114,10 @@ show  inventory  inv_u21
 
 # Update the inventory count, count must >= 0 and <= capacity
 # update  inventory  <inventory_id>  update_count  <increment  or  decrement>
-update  inventory  inv_u26  update_count  260
 update  inventory  inv_u24  update_count  4
 update  inventory  inv_u21  update_count  7
+update  inventory  inv_u26  update_count  260
+update  inventory  inv_u26  update_count  400
 
 
 

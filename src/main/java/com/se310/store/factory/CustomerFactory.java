@@ -12,20 +12,21 @@ import com.se310.store.model.CustomerType;
  */
 public class CustomerFactory {
 
+    // maybe customer is a base Abstract Class
+        // then we have concrete Registered and concrete Guest
+        // case guest : return new GuestCustomer(...)
+        // case registered : return new RegisteredCustomer(...)
+        // throw exception
+
+
     //TODO: Implement Customer Factory for creating guests and registered customers
-    public static Customer createCustomer(String id, String firstName, String lastName, CustomerType type, String email, String accountAddress) {
+    // public static Customer createCustomer(String id, String firstName, String lastName, CustomerType type, String email, String accountAddress) {
         
-        switch (type) {
-            case guest:
-                return new Customer(id, firstName, lastName, type, email, accountAddress) ;
-            case registered:
-                return new Customer(id, firstName, lastName, type, email, accountAddress) ;
-            default:
-                return new Customer(id, firstName, lastName, type, email, accountAddress) ;
-
-        }
 
 
-    }
+
+
+
+    // }
 
 }
