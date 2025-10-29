@@ -41,7 +41,6 @@ public class DeviceStatistics implements Observer {
 
 
     //TODO: Implement Device Statistics stores and prints out event and command counts
-
     public synchronized void update(String deviceId, String eventType, String message) {
 
         switch (eventType) {

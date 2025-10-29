@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import com.se310.store.model.*;
+import com.se310.store.observer.AlertMonitor;
 import com.se310.store.observer.DeviceStatistics;
 import com.se310.store.observer.EventLogger;
 import com.se310.store.observer.StoreNotifier;
@@ -501,6 +502,7 @@ public class StoreService {
                 device.attach(new StoreNotifier(storeLocation)) ;
                 device.attach(EventLogger.getInstance()) ;
                 device.attach(DeviceStatistics.getInstance()) ;
+                device.attach(AlertMonitor.getInstance()) ;
 
             }
         }

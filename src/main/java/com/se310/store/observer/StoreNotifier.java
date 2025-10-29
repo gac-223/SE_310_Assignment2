@@ -22,7 +22,7 @@ public class StoreNotifier implements Observer {
     //TODO: Implement Store Notifier that prints out device events to console
     public synchronized void update(String deviceId, String eventType, String message) {
 
-        System.out.println("[StoreNotifier] " + this.storeLocation.getStoreId() + " | Device: " + deviceId + " | Notifaction: " + eventType + " - " + message) ;
+        System.out.println("[StoreNotifier] Store: " + this.storeLocation.getStoreId() + " | Device: " + deviceId + " | Notification: " + eventType + " - " + message) ;
     }
 
 }

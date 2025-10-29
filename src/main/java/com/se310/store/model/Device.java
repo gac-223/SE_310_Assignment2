@@ -48,7 +48,7 @@ public abstract class Device implements Observable {
     }
 
     // implementation of removal
-    public void detach(Observer observer) {
+    public synchronized void detach(Observer observer) {
 
         observers.remove(observer) ;
 
@@ -69,7 +69,7 @@ public abstract class Device implements Observable {
                 observer.update(this.id, eventType, eventMessage) ;
 
             }  catch (Exception e) {
-                // log info about exception
+                System.out.println("Notify Observer | Device: " + this.id + " failed to notify Observer " + observer) ;
             }
         }
 

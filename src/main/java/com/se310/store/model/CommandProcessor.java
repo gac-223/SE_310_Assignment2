@@ -78,10 +78,11 @@ public class CommandProcessor implements CommandAPI  {
             String[] location = tokens.get(4).split(":");
 
 
+            
             try {
                 InventoryType.valueOf(tokens.get(10)) ;
             } catch (Exception e) {
-                throw new CommandException("Provision Inventory", "Inventory Type Must Be Either 'standard' or 'flexible'") ;
+                throw new StoreException("Provision Inventory", "Inventory Type Must Be Either 'standard' or 'flexible'") ;
             }
 
             storeService.provisionInventory(tokens.get(2), location[0], location[1],

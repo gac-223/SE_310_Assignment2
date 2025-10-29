@@ -78,133 +78,134 @@ import java.util.regex.Pattern;
 <span class="fc" id="L78">            String[] location = tokens.get(4).split(&quot;:&quot;);</span>
 
 
+            
             try {
-<span class="fc" id="L82">                InventoryType.valueOf(tokens.get(10)) ;</span>
-<span class="fc" id="L83">            } catch (Exception e) {</span>
-<span class="fc" id="L84">                throw new CommandException(&quot;Provision Inventory&quot;, &quot;Inventory Type Must Be Either 'standard' or 'flexible'&quot;) ;</span>
+<span class="fc" id="L83">                InventoryType.valueOf(tokens.get(10)) ;</span>
+<span class="fc" id="L84">            } catch (Exception e) {</span>
+<span class="fc" id="L85">                throw new StoreException(&quot;Provision Inventory&quot;, &quot;Inventory Type Must Be Either 'standard' or 'flexible'&quot;) ;</span>
             }
 
-<span class="fc" id="L87">            storeService.provisionInventory(tokens.get(2), location[0], location[1],</span>
-<span class="fc" id="L88">                    location[2], Integer.parseInt(tokens.get(6)), Integer.parseInt(tokens.get(8)),</span>
-<span class="fc" id="L89">                    tokens.get(12), InventoryType.valueOf(tokens.get(10)), null);</span>
+<span class="fc" id="L88">            storeService.provisionInventory(tokens.get(2), location[0], location[1],</span>
+<span class="fc" id="L89">                    location[2], Integer.parseInt(tokens.get(6)), Integer.parseInt(tokens.get(8)),</span>
+<span class="fc" id="L90">                    tokens.get(12), InventoryType.valueOf(tokens.get(10)), null);</span>
 
-<span class="fc bfc" id="L91" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;show inventory&quot;)) {</span>
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;show inventory&quot;)) {</span>
 
-<span class="fc" id="L93">            System.out.println(&quot;&lt;&lt;&lt; &quot; + storeService.showInventory(tokens.get(2), null));</span>
+<span class="fc" id="L94">            System.out.println(&quot;&lt;&lt;&lt; &quot; + storeService.showInventory(tokens.get(2), null));</span>
 
-<span class="fc bfc" id="L95" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;update inventory&quot;)) {</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;update inventory&quot;)) {</span>
 
-<span class="fc" id="L97">            Inventory inventory = storeService.updateInventory(tokens.get(2),Integer.parseInt(tokens.get(4)), null );</span>
-<span class="fc" id="L98">            System.out.println(inventory);</span>
+<span class="fc" id="L98">            Inventory inventory = storeService.updateInventory(tokens.get(2),Integer.parseInt(tokens.get(4)), null );</span>
+<span class="fc" id="L99">            System.out.println(inventory);</span>
 
-<span class="fc bfc" id="L100" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;define customer&quot;)){</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;define customer&quot;)){</span>
 
-<span class="fc" id="L102">            storeService.provisionCustomer(tokens.get(2), tokens.get(4), tokens.get(6),</span>
-<span class="fc" id="L103">                    CustomerType.valueOf(tokens.get(8)), tokens.get(10), tokens.get(12), null);</span>
+<span class="fc" id="L103">            storeService.provisionCustomer(tokens.get(2), tokens.get(4), tokens.get(6),</span>
+<span class="fc" id="L104">                    CustomerType.valueOf(tokens.get(8)), tokens.get(10), tokens.get(12), null);</span>
 
-<span class="fc bfc" id="L105" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;update customer&quot;)){</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;update customer&quot;)){</span>
 
-<span class="fc" id="L107">            String[] location = tokens.get(4).split(&quot;:&quot;);</span>
-<span class="fc" id="L108">            Customer customer = storeService.updateCustomer(tokens.get(2), location[0], location[1], null);</span>
+<span class="fc" id="L108">            String[] location = tokens.get(4).split(&quot;:&quot;);</span>
+<span class="fc" id="L109">            Customer customer = storeService.updateCustomer(tokens.get(2), location[0], location[1], null);</span>
 
-<span class="fc" id="L110">            System.out.println(&quot;&lt;&lt;&lt; &quot; + customer);</span>
+<span class="fc" id="L111">            System.out.println(&quot;&lt;&lt;&lt; &quot; + customer);</span>
 
-<span class="fc bfc" id="L112" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;show customer&quot;)){</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;show customer&quot;)){</span>
 
-<span class="fc" id="L114">            System.out.println(storeService.showCustomer(tokens.get(2),null));</span>
+<span class="fc" id="L115">            System.out.println(storeService.showCustomer(tokens.get(2),null));</span>
 
-<span class="fc bfc" id="L116" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;define basket&quot;)){</span>
+<span class="fc bfc" id="L117" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;define basket&quot;)){</span>
 
-<span class="fc" id="L118">            storeService.provisionBasket(tokens.get(2), null);</span>
+<span class="fc" id="L119">            storeService.provisionBasket(tokens.get(2), null);</span>
 
-<span class="fc bfc" id="L120" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;assign basket&quot;)){</span>
+<span class="fc bfc" id="L121" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;assign basket&quot;)){</span>
 
-<span class="fc" id="L122">            storeService.assignCustomerBasket(tokens.get(4), tokens.get(2), null);</span>
+<span class="fc" id="L123">            storeService.assignCustomerBasket(tokens.get(4), tokens.get(2), null);</span>
 
-<span class="fc bfc" id="L124" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;get_customer_basket&quot;)){</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        } else if(command.toLowerCase().contains(&quot;get_customer_basket&quot;)){</span>
 
-<span class="fc" id="L126">            Basket basket = storeService.getCustomerBasket(tokens.get(1), null);</span>
-<span class="fc" id="L127">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
+<span class="fc" id="L127">            Basket basket = storeService.getCustomerBasket(tokens.get(1), null);</span>
+<span class="fc" id="L128">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
 
-<span class="fc bfc" id="L129" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;add_basket_item&quot;)){</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;add_basket_item&quot;)){</span>
 
-<span class="fc" id="L131">            Basket basket = storeService.addBasketProduct(tokens.get(1), tokens.get(3),</span>
-<span class="fc" id="L132">                    Integer.parseInt(tokens.get(5)), null);</span>
-<span class="fc" id="L133">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
+<span class="fc" id="L132">            Basket basket = storeService.addBasketProduct(tokens.get(1), tokens.get(3),</span>
+<span class="fc" id="L133">                    Integer.parseInt(tokens.get(5)), null);</span>
+<span class="fc" id="L134">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
 
-<span class="fc bfc" id="L135" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;remove_basket_item&quot;)) {</span>
+<span class="fc bfc" id="L136" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;remove_basket_item&quot;)) {</span>
 
-<span class="fc" id="L137">            Basket basket = storeService.removeBasketProduct(tokens.get(1), tokens.get(3),</span>
-<span class="fc" id="L138">                    Integer.parseInt(tokens.get(5)), null);</span>
-<span class="fc" id="L139">            System.out.println(basket);</span>
+<span class="pc" id="L138">            Basket basket = storeService.removeBasketProduct(tokens.get(1), tokens.get(3),</span>
+<span class="fc" id="L139">                    Integer.parseInt(tokens.get(5)), null);</span>
+<span class="nc" id="L140">            System.out.println(basket);</span>
 
-<span class="fc bfc" id="L141" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;clear_basket&quot;)){</span>
+<span class="pc bfc" id="L142" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;clear_basket&quot;)){</span>
 
-<span class="fc" id="L143">            Basket basket = storeService.clearBasket(tokens.get(1),null);</span>
-<span class="fc" id="L144">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
+<span class="nc" id="L144">            Basket basket = storeService.clearBasket(tokens.get(1),null);</span>
+<span class="nc" id="L145">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
 
-<span class="fc bfc" id="L146" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;show basket_items&quot;)){</span>
+<span class="pc bfc" id="L147" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;show basket_items&quot;)){</span>
 
-<span class="fc" id="L148">            Basket basket = storeService.showBasket(tokens.get(2),null);</span>
-<span class="fc" id="L149">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
+<span class="fc" id="L149">            Basket basket = storeService.showBasket(tokens.get(2),null);</span>
+<span class="fc" id="L150">            System.out.println(&quot;&lt;&lt;&lt; &quot; + basket);</span>
 
-<span class="fc bfc" id="L151" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;define device&quot;)){</span>
+<span class="fc bfc" id="L152" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;define device&quot;)){</span>
 
-<span class="fc" id="L153">            String[] location = tokens.get(8).split(&quot;:&quot;);</span>
-<span class="fc" id="L154">            storeService.provisionDevice(tokens.get(2), tokens.get(4),</span>
-<span class="fc" id="L155">                    tokens.get(6), location[0], location[1], null);</span>
+<span class="fc" id="L154">            String[] location = tokens.get(8).split(&quot;:&quot;);</span>
+<span class="fc" id="L155">            storeService.provisionDevice(tokens.get(2), tokens.get(4),</span>
+<span class="fc" id="L156">                    tokens.get(6), location[0], location[1], null);</span>
 
-<span class="fc bfc" id="L157" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;show device&quot;)){</span>
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;show device&quot;)){</span>
 
-<span class="fc" id="L159">            System.out.println(&quot;&lt;&lt;&lt; &quot; + storeService.showDevice(tokens.get(2),null));</span>
+<span class="fc" id="L160">            System.out.println(&quot;&lt;&lt;&lt; &quot; + storeService.showDevice(tokens.get(2),null));</span>
 
-<span class="fc bfc" id="L161" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;create event&quot;)){</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;create event&quot;)){</span>
 
-<span class="fc" id="L163">            storeService.raiseEvent(tokens.get(2), tokens.get(4) + &quot; &quot; + tokens.get(5),null);</span>
+<span class="fc" id="L164">            storeService.raiseEvent(tokens.get(2), tokens.get(4) + &quot; &quot; + tokens.get(5),null);</span>
 
-<span class="fc bfc" id="L165" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;create_event&quot;)){</span>
+<span class="fc bfc" id="L166" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;create_event&quot;)){</span>
 
-<span class="fc" id="L167">            storeService.raiseEvent(tokens.get(1), tokens.get(3) + &quot; &quot; + tokens.get(4) + &quot; &quot; + tokens.get(5),null);</span>
+<span class="fc" id="L168">            storeService.raiseEvent(tokens.get(1), tokens.get(3) + &quot; &quot; + tokens.get(4) + &quot; &quot; + tokens.get(5),null);</span>
 
-<span class="fc bfc" id="L169" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;create command&quot;)){</span>
+<span class="fc bfc" id="L170" title="All 2 branches covered.">        } else if (command.toLowerCase().contains(&quot;create command&quot;)){</span>
 
-<span class="fc" id="L171">            storeService.issueCommand(tokens.get(2), tokens.get(4) + &quot; &quot; + tokens.get(5),null);</span>
+<span class="fc" id="L172">            storeService.issueCommand(tokens.get(2), tokens.get(4) + &quot; &quot; + tokens.get(5),null);</span>
 
-<span class="fc" id="L173">        } else {</span>
-<span class="fc" id="L174">            throw new CommandException(command, &quot;Unrecognized Command&quot;);</span>
+<span class="fc" id="L174">        } else {</span>
+<span class="fc" id="L175">            throw new CommandException(command, &quot;Unrecognized Command&quot;);</span>
         }
-<span class="fc" id="L176">    }</span>
+<span class="fc" id="L177">    }</span>
 
     public void processCommandFile(String fileName) {
-<span class="fc" id="L179">        Path path = FileSystems.getDefault().getPath(Path.of(fileName).toAbsolutePath().toString());</span>
-<span class="fc" id="L180">        List&lt;String&gt; tokens = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L180">        Path path = FileSystems.getDefault().getPath(Path.of(fileName).toAbsolutePath().toString());</span>
+<span class="fc" id="L181">        List&lt;String&gt; tokens = new ArrayList&lt;&gt;();</span>
 
         //Process all the lines in the file
-<span class="fc" id="L183">        try (var stream = Files.lines(path)) {</span>
-<span class="fc" id="L184">            tokens = stream</span>
-<span class="fc" id="L185">                    .toList();</span>
-<span class="nc" id="L186">        } catch (IOException e) {</span>
-<span class="nc" id="L187">            e.printStackTrace();</span>
+<span class="fc" id="L184">        try (var stream = Files.lines(path)) {</span>
+<span class="fc" id="L185">            tokens = stream</span>
+<span class="fc" id="L186">                    .toList();</span>
+<span class="nc" id="L187">        } catch (IOException e) {</span>
+<span class="nc" id="L188">            e.printStackTrace();</span>
         }
 
-<span class="fc" id="L190">        Iterator&lt;String&gt; iterator = tokens.iterator();</span>
+<span class="fc" id="L191">        Iterator&lt;String&gt; iterator = tokens.iterator();</span>
 
         //Filter out any empty lines and lines that start with #
-<span class="fc bfc" id="L193" title="All 2 branches covered.">        for (int i = 0; iterator.hasNext(); i ++) {</span>
-<span class="fc" id="L194">            String temp = iterator.next();</span>
-<span class="fc bfc" id="L195" title="All 4 branches covered.">            if(!temp.trim().startsWith(&quot;#&quot;) &amp;&amp; !temp.trim().isEmpty()) {</span>
+<span class="fc bfc" id="L194" title="All 2 branches covered.">        for (int i = 0; iterator.hasNext(); i ++) {</span>
+<span class="fc" id="L195">            String temp = iterator.next();</span>
+<span class="fc bfc" id="L196" title="All 4 branches covered.">            if(!temp.trim().startsWith(&quot;#&quot;) &amp;&amp; !temp.trim().isEmpty()) {</span>
                 try {
-<span class="fc" id="L197">                    processCommand(temp);</span>
-<span class="fc" id="L198">                } catch (CommandException e) {</span>
-<span class="fc" id="L199">                    e.setLineNumber(i + 1);</span>
-<span class="fc" id="L200">                    System.out.println(&quot;\u001B[31m&quot; + &quot;Failed due to: &quot; + e.getReason() + &quot; for Command: &quot; + e.getCommand()</span>
-<span class="fc" id="L201">                            + &quot; On Line Number: &quot; + e.getLineNumber() + &quot;\u001B[0m&quot;);</span>
-<span class="fc" id="L202">                } catch (StoreException e) {</span>
-<span class="fc" id="L203">                    System.out.println(&quot;\u001B[31m&quot; + &quot;Failed due to: &quot; + e.getReason() + &quot; for Command: &quot; + e.getAction() + &quot;\u001B[0m&quot;);</span>
+<span class="fc" id="L198">                    processCommand(temp);</span>
+<span class="fc" id="L199">                } catch (CommandException e) {</span>
+<span class="fc" id="L200">                    e.setLineNumber(i + 1);</span>
+<span class="fc" id="L201">                    System.out.println(&quot;\u001B[31m&quot; + &quot;Failed due to: &quot; + e.getReason() + &quot; for Command: &quot; + e.getCommand()</span>
+<span class="fc" id="L202">                            + &quot; On Line Number: &quot; + e.getLineNumber() + &quot;\u001B[0m&quot;);</span>
+<span class="fc" id="L203">                } catch (StoreException e) {</span>
+<span class="fc" id="L204">                    System.out.println(&quot;\u001B[31m&quot; + &quot;Failed due to: &quot; + e.getReason() + &quot; for Command: &quot; + e.getAction() + &quot;\u001B[0m&quot;);</span>
                 }
             }
         }
 
-<span class="fc" id="L208">    }</span>
+<span class="fc" id="L209">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

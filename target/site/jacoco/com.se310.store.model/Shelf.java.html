@@ -147,7 +147,7 @@ public class Shelf {
 
         //Make sure already does not exist in the store
 <span class="pc bpc" id="L149" title="1 of 2 branches missed.">        if(inventoryMap.putIfAbsent(inventoryId,inventory) != null)</span>
-<span class="nc" id="L150">            throw new StoreException(&quot;Add Inventory&quot;, &quot;Inventory Already Exists&quot;);</span>
+<span class="nc" id="L150">            throw new StoreException(&quot;Provision Inventory&quot;, &quot;Inventory Already Exists&quot;);</span>
 
         
 <span class="pc bpc" id="L153" title="1 of 3 branches missed.">        switch (type) {            </span>
@@ -158,7 +158,7 @@ public class Shelf {
 <span class="fc" id="L158">                inventory.setInventoryUpdateStrategy(new StandardInventoryUpdateStrategy());</span>
 <span class="fc" id="L159">                break ;</span>
             default:
-                break ;
+<span class="nc" id="L161">                throw new StoreException(&quot;Provision Inventory&quot;, &quot;Inventory Type Must Be Either 'standard' or 'flexible'&quot;) ;</span>
         }
 
 <span class="fc" id="L164">        return inventory;</span>

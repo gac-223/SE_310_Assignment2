@@ -10,32 +10,32 @@ import com.se310.store.model.StoreLocation;
  * @version 1.0
  * @since   2025-09-25
  */
-<span class="nc" id="L13">public class AlertMonitor implements Observer {</span>
+<span class="fc" id="L13">public class AlertMonitor implements Observer {</span>
 
     private static AlertMonitor instance ;
 
 
     public static AlertMonitor getInstance() {
 
-<span class="nc bnc" id="L20" title="All 2 branches missed.">        if (instance == null) {</span>
-<span class="nc" id="L21">            synchronized(AlertMonitor.class) {</span>
-<span class="nc bnc" id="L22" title="All 2 branches missed.">                if (instance == null) {</span>
-<span class="nc" id="L23">                    instance = new AlertMonitor() ;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (instance == null) {</span>
+<span class="fc" id="L21">            synchronized(AlertMonitor.class) {</span>
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">                if (instance == null) {</span>
+<span class="fc" id="L23">                    instance = new AlertMonitor() ;</span>
                 }
-<span class="nc" id="L25">            }</span>
+            }
         }
 
-<span class="nc" id="L28">        return instance ;</span>
+<span class="fc" id="L28">        return instance ;</span>
     }
 
     //TODO: Implement Alert Monitor that prints out critical events to the console
     public synchronized void update (String deviceId, String eventType, String message) {
 
         // print message if contains - &quot;emergency&quot;, &quot;critical&quot;, &quot;error&quot;, &quot;failure&quot;, or &quot;alarm&quot;
-<span class="nc bnc" id="L35" title="All 10 branches missed.">        if (message.contains(&quot;emergency&quot;) || message.contains(&quot;critical&quot;) || message.contains(&quot;error&quot;) || message.contains(&quot;failure&quot;) || message.contains(&quot;alarm&quot;)) {</span>
+<span class="pc bpc" id="L35" title="5 of 10 branches missed.">        if (message.contains(&quot;emergency&quot;) || message.contains(&quot;critical&quot;) || message.contains(&quot;error&quot;) || message.contains(&quot;failure&quot;) || message.contains(&quot;alarm&quot;)) {</span>
 <span class="nc" id="L36">            System.out.println(&quot;[AlertMonitor] Critical Event | Device: &quot; + deviceId + &quot; | Event Type: &quot; + eventType + &quot; | Message: &quot; + message) ;</span>
         }
         
-<span class="nc" id="L39">    }</span>
+<span class="fc" id="L39">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

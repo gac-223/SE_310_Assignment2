@@ -147,7 +147,7 @@ public class Shelf {
 
         //Make sure already does not exist in the store
         if(inventoryMap.putIfAbsent(inventoryId,inventory) != null)
-            throw new StoreException("Add Inventory", "Inventory Already Exists");
+            throw new StoreException("Provision Inventory", "Inventory Already Exists");
 
         
         switch (type) {            
@@ -158,7 +158,7 @@ public class Shelf {
                 inventory.setInventoryUpdateStrategy(new StandardInventoryUpdateStrategy());
                 break ;
             default:
-                break ;
+                throw new StoreException("Provision Inventory", "Inventory Type Must Be Either 'standard' or 'flexible'") ;
         }
 
         return inventory;
